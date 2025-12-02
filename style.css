@@ -1,0 +1,514 @@
+/* background colour */
+
+body {
+  background: linear-gradient(
+    to bottom,
+    #1a1a1a,
+    #2c2c2c
+  ); /* Dark grey gradient */
+  color: white; /* Ensures text is visible on the dark background */
+  margin: 0; /* Removes default margin */
+  font-family: "Roboto", serif;
+  font-size: 1.125rem;
+  padding: 0; /* Removes default padding */
+  min-height: 100vh; /* Ensures the background covers the full viewport height */
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1024px;
+  min-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  /* this will centre the container */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+/* let us try this fix for nav bar */
+nav {
+  display: flex;
+  justify-content: center; /* Centers nav items */
+  align-items: center;
+  gap: 20px; /* Adds spacing between navigation links */
+  padding: 15px 0; /* Adds space above and below the navbar */
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 15px; /* Adds spacing around each item */
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #f2c230;
+}
+
+/* Fixes header alignment */
+header {
+  display: flex;
+  justify-content: space-between; /* Keeps logo on the left, navbar on the right */
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Ensures logo is properly positioned */
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* Aligns logo to the left */
+}
+
+.logo img {
+  max-width: 150px; /* Adjusts logo size */
+  height: auto;
+}
+
+/* Optional: Center the navbar if necessary */
+.nav-container {
+  flex: 2;
+  display: flex;
+  justify-content: center; /* Centers navbar in relation to the page */
+}
+
+main {
+  min-height: 300px;
+}
+
+main p {
+  line-height: 1.7;
+}
+
+.main2 {
+  min-height: 300px;
+  padding-top: 50px;
+}
+
+.home-main {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  /* this makes cards sit next to each other */
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 2px;
+}
+.card1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(assets/python.jpg);
+  background-size: cover;
+  background-position: bottom;
+  min-height: 250px;
+  width: 30%;
+}
+
+.card2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(assets/powerbi_2.jpg);
+  min-height: 250px;
+  width: 30%;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.card3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(assets/map_1.jpg);
+  min-height: 250px;
+  width: 30%;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.card1,
+.card2,
+.card3 {
+  padding: 30px 30px 20px 30px;
+  box-sizing: border-box;
+}
+
+.card1,
+.card2,
+.card3,
+img {
+  padding: 30px 30px 20px 30px;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.card1,
+.card2,
+.card3 {
+  transition: all 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover {
+  transform: scale(1.05); /* Slightly enlarges the box */
+  filter: brightness(1.2); /* Increases brightness slightly */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Soft glow effect */
+}
+
+.herobox1 {
+  flex: 2;
+  padding-right: 100px;
+}
+
+.herobox2 {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Clips the image inside */
+  border-radius: 12px; /* Ensures the container is rounded */
+  width: 100%;
+  height: auto;
+}
+
+.herobox2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: inherit; /* Inherits the parent's rounded corners */
+}
+.herobox2 {
+  border: 2px solid rgba(255, 0, 0, 0.24);
+  box-shadow: 5px 5px 2px rgb(54, 53, 53);
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centers the logo if necessary */
+}
+.logo {
+  width: 250px; /* Adjust this size as needed */
+  height: auto;
+}
+.logo img {
+  background-color: transparent; /* Ensures no forced background */
+  mix-blend-mode: screen; /* Blends with the background */
+}
+
+header nav {
+  color: red;
+}
+
+.navbutton {
+  border: 1px solid white;
+  padding: 10px 20px;
+  font-family: "Playfair Display", serif;
+  display: inline-block;
+  background-color: transparent;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Optional: Adjust width if needed */
+.navbutton a {
+  display: inline-block;
+  min-width: 100px; /* Ensures equal width */
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: "Playfair", serif;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: "Playfair", serif;
+  text-align: center;
+}
+
+p {
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cards p {
+  font-size: 0.85rem;
+  line-height: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cards a {
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.7rem;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.navbutton:hover .dropdown {
+  display: block;
+}
+
+.dropdown .navbutton {
+  width: 115px;
+}
+
+/* in case you add a button */
+
+.mybutton {
+  background-color: black;
+  color: red;
+  font-family: "Playfair Display", serif;
+  padding: 11px 25px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.228);
+}
+
+.navbutton:hover {
+  background-color: rgb(112, 35, 16);
+  transition-duration: 1s;
+}
+
+a.mybutton {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+nav a.mybutton {
+  margin-left: 30px;
+}
+
+/* Blog Post Styling */
+
+.blog-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 2rem;
+  text-align: center; /* Centering content */
+}
+/* Blog Header */
+.blog-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+/* Blog Description */
+.blog-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+/* Blog post layout */
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures center alignment */
+  gap: 2rem;
+}
+/* Blog post preview cards */
+.blog-post {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px; /* Limits width for balanced text alignment */
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.blog-post:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+/* Blog Post Titles */
+.blog-post h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+/* Blog Post Title */
+.blog-content h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+/* Blog post links */
+.blog-post a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Blog post text */
+.blog-post p {
+  font-size: 1rem;
+  color: #bbb;
+}
+/* Blog Date */
+.blog-date {
+  font-size: 1rem;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* General paragraph formatting */
+.blog-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: justify; /* Ensures balanced text alignment */
+  margin-bottom: 1rem;
+}
+
+/* Fix headers inside the blog post */
+.blog-content h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left; /* Ensures alignment */
+}
+
+/* Bullet Points */
+.blog-content ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+.blog-content li {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Back to Blog Link */
+.blog-content a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #f2c230;
+  display: block;
+  margin-top: 2rem;
+}
+/* Fix for blog post layout */
+.blog-content {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  text-align: left; /* Ensures text is aligned properly */
+  display: block; /* Fixes flexbox issue */
+}
+
+/* Override `main` for blog pages */
+.blog-post-container main {
+  display: block; /* This ensures blog content flows properly */
+}
+/* Override global main styles ONLY for blog pages */
+.blog-container main,
+.blog-post-container main {
+  display: block !important; /* Ensures normal block layout */
+  flex-direction: column; /* Forces a stacked layout */
+  align-items: normal;
+  justify-content: normal;
+  text-align: left;
+}
+
+/* Override global main styles ONLY for blog post pages */
+.blog-post-container main {
+  display: block !important; /* Ensures normal block layout */
+  flex-direction: column; /* Forces a stacked layout */
+  align-items: normal;
+  justify-content: normal;
+  text-align: left;
+}
+
+/* Blog Post Styling */
+.blog-content {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  text-align: left; /* Ensures text is aligned properly */
+}
+
+/* Blog Post Title */
+.blog-content h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Blog Date */
+.blog-date {
+  font-size: 1rem;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* General paragraph formatting */
+.blog-content p {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  text-align: justify; /* Ensures balanced text alignment */
+  margin-bottom: 1.5rem;
+}
+
+/* Fix headers inside the blog post */
+.blog-content h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left; /* Ensures alignment */
+}
+
+/* Bullet Points */
+.blog-content ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+.blog-content li {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Back to Blog Link */
+.blog-content a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #f2c230;
+  display: block;
+  margin-top: 2rem;
+}

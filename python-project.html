@@ -1,0 +1,187 @@
+<!-- Python Project -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .project-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem;
+      }
+      .project-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .text-content,
+      .iframe-container {
+        flex: 1;
+        min-width: 48%;
+        padding: 1rem;
+      }
+      .iframe-container iframe {
+        width: 100%;
+        height: 600px;
+        border: 2px solid #035159;
+        border-radius: 8px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/2.svg" alt="Kabiri's logo" />
+          </a>
+        </div>
+        <nav>
+          <div class="navbutton"><a href="index.html">Home</a></div>
+          <div class="navbutton">
+            <a href="#">Projects</a>
+            <div class="dropdown">
+              <div class="navbutton">
+                <a href="python-project.html">Python</a>
+              </div>
+              <div class="navbutton">
+                <a href="powerbi-project.html">Power BI</a>
+              </div>
+              <div class="navbutton">
+                <a href="tableau-project.html">Executive Pulse</a>
+              </div>
+            </div>
+          </div>
+          <div class="navbutton"><a href="contact.html">Contact</a></div>
+        </nav>
+      </header>
+
+      <main class="project-container">
+        <h1>Python Project: Human Development & Economic Patterns</h1>
+
+        <div class="project-content">
+          <div class="text-content">
+            <section>
+              <h2>Overview</h2>
+              <p>
+                This project explores the relationship between economic output
+                and human development using country-level data on GDP per capita
+                and the Human Development Index (HDI). The core question is
+                simple but important:
+                <em
+                  >Do higher-income countries always deliver better human
+                  outcomes?</em
+                >
+              </p>
+              <p>
+                Using Python, I carried out an exploratory analysis to
+                understand global patterns, regional clusters, and exceptions to
+                the rule — countries that achieve relatively high human
+                development despite modest income levels.
+              </p>
+            </section>
+
+            <section>
+              <h2>Analytical Approach</h2>
+              <p>
+                The analysis is structured as a clear, reproducible workflow
+                inside a Jupyter Notebook:
+              </p>
+              <ul>
+                <li>
+                  Loading and cleaning HDI and GDP per capita data for multiple
+                  countries and regions.
+                </li>
+                <li>
+                  Creating scatterplots to visualise the relationship between
+                  GDP and HDI, including log-scaling GDP for readability.
+                </li>
+                <li>
+                  Highlighting regional groupings (such as Sub-Saharan Africa,
+                  Europe & Central Asia, East Asia & Pacific) to compare
+                  trajectories.
+                </li>
+                <li>
+                  Identifying countries that “punch above their weight” on HDI
+                  relative to income.
+                </li>
+              </ul>
+              <p>
+                The focus is not only on correlation, but on the distribution
+                and shape of the relationship: where it holds, where it bends,
+                and where it breaks.
+              </p>
+            </section>
+
+            <section>
+              <h2>Key Insights</h2>
+              <ul>
+                <li>
+                  There is a clear positive relationship between GDP per capita
+                  and HDI, but it is not linear and not mechanical. Income
+                  creates possibilities — it does not guarantee outcomes.
+                </li>
+                <li>
+                  Sub-Saharan Africa shows a visible cluster of countries with
+                  both low GDP and low HDI, but also a few emerging movers that
+                  are improving on one or both dimensions.
+                </li>
+                <li>
+                  Some countries, such as Cabo Verde or Bhutan–type profiles,
+                  achieve relatively strong HDI scores despite modest income
+                  levels. This suggests effective investment in health,
+                  education, and social infrastructure.
+                </li>
+              </ul>
+              <p>
+                These patterns matter because they move the conversation beyond
+                “rich vs poor” and towards how well countries convert economic
+                resources into human wellbeing.
+              </p>
+            </section>
+
+            <section>
+              <h2>Why This Matters</h2>
+              <p>
+                For policymakers, donors, and analysts, this kind of work
+                supports more nuanced benchmarking: not just “who is rich?” but
+                “who is doing the most with what they have?”.
+              </p>
+              <p>
+                From a technical point of view, the project demonstrates how
+                Python can be used to: structure messy development data, create
+                interpretable visuals, and guide deeper questions rather than
+                just produce a single summary statistic.
+              </p>
+            </section>
+          </div>
+
+          <div class="iframe-container">
+            <h2>Jupyter Notebook</h2>
+            <p>
+              The full workflow, including code, charts, and commentary, is
+              available in the embedded notebook below.
+            </p>
+            <iframe src="HDI_analysis.html"></iframe>
+          </div>
+        </div>
+
+        <p>
+          <a class="project-link" href="index.html">← Back to Portfolio</a>
+        </p>
+      </main>
+      <footer>
+        <p>&copy; 2025 Kabiri N. Bule. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

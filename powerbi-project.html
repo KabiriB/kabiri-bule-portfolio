@@ -1,0 +1,208 @@
+<!-- Power BI Project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power BI Project</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .dashboard-section {
+      width: 100%;
+      max-width: 1000px;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .iframe-container {
+      width: 100%;
+      margin-top: 1rem;
+
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 600px;
+      border: 2px solid rgb(236, 236, 165);
+      border-radius: 8px;
+      display: block;
+    }
+
+    .iframe-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+    h1, h2 {
+      color: rgb(236, 236, 165);
+    }
+    h1 {
+      text-align: center;
+      color: antiquewhite;
+    }
+    ul {
+    padding-left: 20px; /* Ensures proper indentation */
+    margin-bottom: 20px; /* Adds space below the entire list */
+}
+
+ul li {
+    margin-bottom: 15px; /* Increases space between list items */
+    line-height: 1.8; /* Further improves readability */
+}
+
+h2 {
+    margin-top: 25px; /* Adds space above section headers */
+    margin-bottom: 15px; /* Ensures good spacing between heading and content */
+}
+
+p {
+    margin-bottom: 15px; /* Adds space below paragraph text */
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/2.svg" alt="Kabiri's logo">
+        </a>
+      </div>
+      <nav>
+        <div class="navbutton"><a href="index.html">Home</a></div>
+        <div class="navbutton">
+          <a href="#">Projects</a>
+          <div class="dropdown">
+            <div class="navbutton"><a href="python-project.html">Python</a></div>
+            <div class="navbutton"><a href="powerbi-project.html">Power BI</a></div>
+            <div class="navbutton"><a href="tableau-project.html">Executive Pulse</a></div>
+          </div>
+        </div>
+        <div class="navbutton"><a href="contact.html">Contact</a></div>
+      </nav>
+    </header>
+
+    <main class="project-container">
+      
+      <!-- FIRST DASHBOARD -->
+      <div class="dashboard-section">
+        <h1>Power BI Case Study: Retail Performance & Customer Insight</h1>
+    
+        <section>
+            <h2>Overview</h2>
+            <p>
+        This project simulates a real engagement with a mid-sized retail group operating across multiple city branches. 
+        The company was experiencing uneven store performance, declining customer satisfaction in key locations, 
+        and limited visibility into patterns that could guide better operational decisions.
+    </p>
+
+    <h2>Understanding the Business Context</h2>
+    <p>
+        Retail environments generate large volumes of granular data — sales, inventory movements, customer behaviour, 
+        seasonal shifts, and promotion responses. But without structure, this data becomes noise. 
+        The leadership team needed a way to see what was actually happening: 
+        which branches were thriving, which were lagging, and why.
+    </p>
+
+    <p>
+        My role in this simulated engagement was to take a raw dataset and build a dashboard that could surface 
+        meaningful patterns: revenue variation, product category performance, profitability pressures, 
+        and customer experience signals. 
+        The goal was not only to visualise the numbers, but to reveal the story behind them.
+    </p>
+
+    <h2>Analytical Approach</h2>
+    <p>
+        I began by examining sales performance across stores, drilling into monthly trends, 
+        peak periods, and fluctuations that suggested operational challenges. 
+        Category-level analysis highlighted which products were driving revenue vs. which ones created bottlenecks. 
+    </p>
+
+    <p>
+        One particularly important layer was customer feedback data. When mapped against revenue and footfall, 
+        it revealed patterns that were easy to miss at the surface — several branches with high foot traffic were 
+        underperforming due to consistent dissatisfaction with service and stock availability. 
+        These relationships became clear only once the data was unified into a single analytical view.
+    </p>
+
+    <h2>What the Dashboard Shows</h2>
+    <p>
+        The Power BI dashboard provides:
+        <ul>
+            <li>Branch-level performance with interactive comparisons</li>
+            <li>Category and product trends across time</li>
+            <li>Customer satisfaction patterns mapped to revenue</li>
+            <li>Operational red flags such as stockouts, low-margin items, and declining branches</li>
+        </ul>
+    </p>
+
+    <p>
+        Together, these views help decision-makers see not just <em>what</em> is happening, 
+        but <em>why</em>. Patterns that were previously hidden — especially the link between 
+        customer experience and revenue dips — become part of the strategic conversation.
+    </p>
+
+    <h2>Strategic Narrative</h2>
+    <p>
+        When synthesised, the data tells a simple but powerful story: performance is not evenly distributed, 
+        and customer experience is the strongest predictor of sustained revenue. 
+        Branches that maintained strong service scores consistently outperformed those with recurring complaints, 
+        even when foot traffic levels were similar.
+    </p>
+
+    <p>
+        This insight shifts the business question from “Which branches are underperforming?” 
+        to “What is happening inside each branch’s customer journey that drives or undermines revenue?” 
+        That is the level of clarity a dashboard like this enables — a shift from observation to understanding.
+    </p>
+
+    <h2>Interactive Dashboard</h2>
+    <p>
+        Explore the interactive Power BI report below:
+    </p>
+        </section>
+    
+        <div class="iframe-container">
+            <h2></h2>
+            <iframe title="super_power" src="https://app.powerbi.com/view?r=eyJrIjoiY2U3ZTRkZjEtYmVkZC00NjllLWEzMmMtM2MwODg4NmM4ZjJjIiwidCI6IjRiMWI5MDhjLTU1ODItNDM3Ny1iYTA3LWEzNmQ2NWUzNDkzNCIsImMiOjh9" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+
+      <!-- SECOND DASHBOARD -->
+      <p>
+        This dashboard reflects the broader philosophy that guides my work: data is most valuable 
+        when it reveals the relationships that shape real-world outcomes. 
+        By bringing sales, customer feedback, and product performance into one view, 
+        the organisation gains a clearer picture of where to intervene, where to invest, 
+        and how to improve the overall customer experience.
+    </p>
+    </main>
+
+<main class="project-container">
+      <h1></h1>
+      <div class="content-wrapper">
+      
+      </div>
+      <a class="project-link" href="index.html">Back to Portfolio</a>
+    </main>
+    <footer>
+      <p>&copy; 2025 Kabiri N. Bule. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
