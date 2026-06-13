@@ -16,7 +16,7 @@ function StudioCard({ studio }) {
       </div>
 
       <a href={`#${studio.id}`} className="studio-link">
-        Open studio brief
+        Enter studio
       </a>
     </article>
   );
