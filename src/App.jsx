@@ -1,122 +1,80 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import "./App.css";
+
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import StudioCard from "./components/StudioCard";
+import { studios } from "./data/studios";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+    <main className="app-shell">
+      <Header />
+      <Hero />
+
+      <section className="site-section studios-section" id="studios">
+        <div className="section-heading">
+          <p className="eyebrow">Decision Studios</p>
+          <h2>Prototype environments for reading complex systems.</h2>
+          <p className="section-kicker">
+            Each studio is designed as a custom decision environment: part
+            analytical interface, part briefing room, part interpretive tool.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        <div className="studios-grid">
+          {studios.map((studio) => (
+            <StudioCard key={studio.id} studio={studio} />
+          ))}
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <section className="site-section split-section" id="writing">
+        <div>
+          <p className="eyebrow">Writing / Briefing Notes</p>
+          <h2>Clear thinking for public, organisational, and urban problems.</h2>
+        </div>
+        <p className="section-kicker">
+          This section will hold short notes that translate research and
+          analysis into usable strategic language for collaborators, employers,
+          public-sector partners, and senior decision-makers.
+        </p>
+      </section>
+
+      <section className="site-section split-section" id="research">
+        <div>
+          <p className="eyebrow">Research & Publications</p>
+          <h2>Urban governance, migration, trust, and institutional life.</h2>
+        </div>
+        <p className="section-kicker">
+          A selected record of academic work, public writing, datasets, talks,
+          and research programmes connecting African cities, civic life, and
+          evidence-informed governance.
+        </p>
+      </section>
+
+      <section className="site-section about-section card" id="about">
+        <p className="eyebrow">About</p>
+        <h2>Research-grounded, interface-oriented, decision-useful.</h2>
+        <p>
+          My work sits at the intersection of urban research, data science, and
+          strategic communication. I build tools that help people make sense of
+          complexity: where systems are under strain, where evidence is noisy,
+          and where better questions can lead to better decisions.
+        </p>
+      </section>
+
+      <section className="site-section contact-section" id="contact">
+        <p className="eyebrow">Contact</p>
+        <h2>
+          For collaborations, advisory work, research partnerships, and
+          analytical prototypes.
+        </h2>
+        <a className="primary-button" href="mailto:kabiri.bule@gmail.com">
+          Email Kabiri
+        </a>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;
