@@ -51,17 +51,36 @@ function ExecutiveSignalRoom() {
       className="site-section executive-room-section"
       id="executive-signal-room"
     >
-      <div className="section-heading">
-        <p className="eyebrow">Studio 01 · Executive Signal Room</p>
-        <h2>Read organisational health before problems become obvious.</h2>
-        <p className="section-kicker">
-          A leadership-facing prototype for interpreting people, operations,
-          experience, and finance as connected signals rather than isolated
-          metrics.
-        </p>
+      <div className="section-heading studio-heading">
+        <div>
+          <p className="eyebrow">Studio 01 · Executive Signal Room</p>
+          <h2>Read organisational health before problems become obvious.</h2>
+          <p className="section-kicker">
+            A leadership-facing prototype for interpreting people, operations,
+            experience, and finance as connected signals rather than isolated
+            metrics.
+          </p>
+        </div>
+
+        <div className="prototype-note">
+          <span>Simulated prototype data</span>
+          <p>
+            The figures are illustrative. The value is in the decision
+            structure: how signals are classified, interpreted, and turned into
+            better leadership questions.
+          </p>
+        </div>
       </div>
 
       <div className="executive-room card">
+        <div className="studio-reading-guide">
+          <span>How to read this studio</span>
+          <p>
+            Select a signal, choose a scenario mode, then read the diagnostic as
+            a leadership briefing rather than a raw dashboard.
+          </p>
+        </div>
+
         <div className="scenario-strip" aria-label="Scenario mode selector">
           <span>Scenario mode</span>
 
