@@ -1,14 +1,49 @@
 import { useMemo, useState } from "react";
 import { executiveSignals } from "../data/executiveSignals";
 
+const scenarioModes = [
+  {
+    id: "normal",
+    label: "Normal watch",
+    description:
+      "Use the signal to maintain visibility, protect strengths, and notice early drift before it becomes operational pressure.",
+    nextMove:
+      "Keep the signal under routine review, but ask one sharper question about where quiet strain may be accumulating.",
+  },
+  {
+    id: "pressure",
+    label: "Pressure rising",
+    description:
+      "Treat the signal as an early warning. Look for connected effects across teams, users, budgets, and delivery routines.",
+    nextMove:
+      "Identify the two pressure points most likely to spread across the system, then assign ownership for closer monitoring.",
+  },
+  {
+    id: "crisis",
+    label: "Crisis watch",
+    description:
+      "Read the signal as a potential failure pathway. Focus on containment, decision rights, communication, and the minimum viable response.",
+    nextMove:
+      "Clarify who decides, what must be protected first, and which trade-offs leadership is willing to make in the next 72 hours.",
+  },
+];
+
 function ExecutiveSignalRoom() {
   const [activeSignalId, setActiveSignalId] = useState("experience");
+  const [activeScenarioId, setActiveScenarioId] = useState("pressure");
 
   const activeSignal = useMemo(
     () =>
       executiveSignals.find((signal) => signal.id === activeSignalId) ??
       executiveSignals[0],
     [activeSignalId],
+  );
+
+  const activeScenario = useMemo(
+    () =>
+      scenarioModes.find((scenario) => scenario.id === activeScenarioId) ??
+      scenarioModes[0],
+    [activeScenarioId],
   );
 
   return (
@@ -27,6 +62,27 @@ function ExecutiveSignalRoom() {
       </div>
 
       <div className="executive-room card">
+        <div className="scenario-strip" aria-label="Scenario mode selector">
+          <span>Scenario mode</span>
+
+          <div>
+            {scenarioModes.map((scenario) => (
+              <button
+                key={scenario.id}
+                type="button"
+                className={
+                  scenario.id === activeScenarioId
+                    ? "scenario-button scenario-button-active"
+                    : "scenario-button"
+                }
+                onClick={() => setActiveScenarioId(scenario.id)}
+              >
+                {scenario.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="signal-selector" aria-label="Executive signal selector">
           {executiveSignals.map((signal) => (
             <button
@@ -83,6 +139,11 @@ function ExecutiveSignalRoom() {
                 </div>
               </div>
             ))}
+
+            <div className="scenario-note">
+              <span>{activeScenario.label}</span>
+              <p>{activeScenario.description}</p>
+            </div>
           </div>
 
           <aside className="decision-reading">
@@ -105,6 +166,11 @@ function ExecutiveSignalRoom() {
                   <li key={question}>{question}</li>
                 ))}
               </ul>
+            </div>
+
+            <div className="recommended-move">
+              <h4>Recommended next move</h4>
+              <p>{activeScenario.nextMove}</p>
             </div>
           </aside>
         </div>

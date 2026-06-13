@@ -800,3 +800,87 @@ html {
     min-height: auto;
   }
 }
+/* ================================
+   Scenario mode controls
+   ================================ */
+
+.scenario-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 252, 246, 0.5);
+}
+
+.scenario-strip > span {
+  color: var(--color-bronze);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.scenario-strip > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scenario-button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid rgba(31, 37, 40, 0.12);
+  border-radius: 999px;
+  color: var(--color-muted);
+  background: rgba(255, 252, 246, 0.62);
+  font-weight: 850;
+}
+
+.scenario-button-active {
+  border-color: rgba(168, 117, 59, 0.46);
+  color: var(--color-navy);
+  background: rgba(216, 185, 140, 0.22);
+}
+
+.scenario-note {
+  margin-top: 4px;
+  padding: 18px;
+  border: 1px solid rgba(168, 117, 59, 0.22);
+  border-radius: var(--radius-medium);
+  background: rgba(216, 185, 140, 0.1);
+}
+
+.scenario-note span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-bronze);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.scenario-note p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.62;
+}
+
+.recommended-move {
+  border-color: rgba(168, 117, 59, 0.24) !important;
+}
+
+.recommended-move h4 {
+  color: var(--color-bronze);
+}
+
+@media (max-width: 760px) {
+  .scenario-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
