@@ -31,12 +31,15 @@ function App() {
       <section className="site-section split-section" id="writing">
         <div>
           <p className="eyebrow">Writing / Briefing Notes</p>
-          <h2>Clear thinking for public, organisational, and urban problems.</h2>
+          <h2>
+            Clear thinking for public, organisational, and urban problems.
+          </h2>
         </div>
         <p className="section-kicker">
-          This section will hold short notes that translate research and
-          analysis into usable strategic language for collaborators, employers,
-          public-sector partners, and senior decision-makers.
+          Briefing notes, essays, and interpretive pieces that translate
+          research and analysis into usable strategic language for
+          collaborators, employers, public-sector partners, and senior
+          decision-makers.
         </p>
       </section>
 
@@ -46,9 +49,9 @@ function App() {
           <h2>Urban governance, migration, trust, and institutional life.</h2>
         </div>
         <p className="section-kicker">
-          A selected record of academic work, public writing, datasets, talks,
-          and research programmes connecting African cities, civic life, and
-          evidence-informed governance.
+          Selected publications, public writing, datasets, talks, and research
+          programmes connecting African cities, civic life, institutional
+          experience, and evidence-informed governance.
         </p>
       </section>
 
@@ -57,9 +60,10 @@ function App() {
         <h2>Research-grounded, interface-oriented, decision-useful.</h2>
         <p>
           My work sits at the intersection of urban research, data science, and
-          strategic communication. I build tools that help people make sense of
-          complexity: where systems are under strain, where evidence is noisy,
-          and where better questions can lead to better decisions.
+          strategic communication. I design tools that help people make sense of
+          complex systems: where pressure is building, where evidence is noisy,
+          where institutions are struggling to respond, and where better
+          questions can lead to better decisions.
         </p>
       </section>
 
