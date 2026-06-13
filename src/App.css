@@ -457,3 +457,346 @@ html {
     font-size: clamp(2.3rem, 12vw, 3.8rem);
   }
 }
+/* ================================
+   Executive Signal Room
+   ================================ */
+
+.executive-room-section {
+  padding: 22px 0 96px;
+  scroll-margin-top: 120px;
+}
+
+.executive-room {
+  padding: 24px;
+}
+
+.signal-selector {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.signal-tab {
+  display: grid;
+  gap: 8px;
+  min-height: 126px;
+  padding: 18px;
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: var(--radius-medium);
+  color: var(--color-muted);
+  background: rgba(255, 252, 246, 0.54);
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.signal-tab span {
+  color: var(--color-navy);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.signal-tab strong {
+  color: var(--color-navy);
+  font-size: 2.3rem;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.signal-tab small {
+  font-weight: 850;
+}
+
+.signal-tab:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168, 117, 59, 0.32);
+}
+
+.signal-tab-active {
+  border-color: rgba(168, 117, 59, 0.45);
+  background: linear-gradient(
+    135deg,
+    rgba(216, 185, 140, 0.2),
+    rgba(255, 252, 246, 0.76)
+  );
+}
+
+.signal-dashboard {
+  display: grid;
+  grid-template-columns: 0.95fr 1fr 1.05fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.signal-summary-panel,
+.metric-list,
+.decision-reading {
+  border: 1px solid rgba(31, 37, 40, 0.1);
+  border-radius: var(--radius-large);
+  background: rgba(255, 252, 246, 0.56);
+}
+
+.signal-summary-panel {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+}
+
+.signal-score-block {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.signal-score-block strong {
+  color: var(--color-navy);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+}
+
+.signal-score-block small {
+  color: var(--color-muted);
+  font-weight: 850;
+}
+
+.signal-summary-panel h3 {
+  margin: 0 0 14px;
+  color: var(--color-navy);
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.signal-summary-panel p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.trend-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+
+.trend-row span {
+  color: var(--color-muted);
+  font-weight: 850;
+}
+
+.trend-row strong {
+  color: var(--color-navy);
+}
+
+.metric-list {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding: 24px;
+}
+
+.metric-row {
+  display: grid;
+  gap: 10px;
+}
+
+.metric-row-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--color-muted);
+  font-weight: 850;
+}
+
+.metric-row-label strong {
+  color: var(--color-navy);
+}
+
+.metric-track {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(31, 37, 40, 0.08);
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--color-bronze-soft),
+    var(--color-bronze)
+  );
+}
+
+.decision-reading {
+  padding: 24px;
+}
+
+.decision-reading div + div {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.decision-reading h4 {
+  margin: 0 0 8px;
+  color: var(--color-navy);
+  font-size: 1.05rem;
+}
+
+.decision-reading p,
+.decision-reading li {
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.decision-reading p {
+  margin: 0;
+}
+
+.decision-reading ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+@media (max-width: 1100px) {
+  .signal-selector {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .signal-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .signal-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-room {
+    padding: 16px;
+  }
+}
+/* ================================
+   Executive Signal Room refinement
+   ================================ */
+
+.executive-room-section {
+  padding: 30px 0 96px;
+}
+
+.executive-room {
+  padding: 22px;
+}
+
+.signal-selector {
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.signal-tab {
+  min-height: 112px;
+  padding: 18px 20px;
+}
+
+.signal-tab strong {
+  font-size: 2.7rem;
+}
+
+.signal-dashboard {
+  grid-template-columns: 1.05fr 0.95fr 1.25fr;
+  gap: 18px;
+}
+
+.signal-summary-panel,
+.metric-list,
+.decision-reading {
+  min-height: 360px;
+}
+
+.signal-summary-panel {
+  grid-template-rows: auto 1fr;
+  gap: 18px;
+}
+
+.signal-score-block {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.signal-score-block strong {
+  font-size: clamp(4.4rem, 7vw, 6.2rem);
+}
+
+.selected-signal-copy h3 {
+  margin: 0 0 12px;
+  color: var(--color-navy);
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.selected-signal-copy p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.68;
+}
+
+.metric-list {
+  gap: 20px;
+}
+
+.metric-list > .eyebrow {
+  margin-bottom: 2px;
+}
+
+.metric-row-label {
+  font-size: 1rem;
+}
+
+.metric-track {
+  height: 11px;
+}
+
+.decision-reading {
+  display: grid;
+  align-content: start;
+}
+
+.decision-reading h4 {
+  font-size: 1.02rem;
+}
+
+.decision-reading p,
+.decision-reading li {
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.decision-reading div + div {
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+@media (max-width: 1180px) {
+  .signal-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .signal-summary-panel,
+  .metric-list,
+  .decision-reading {
+    min-height: auto;
+  }
+}

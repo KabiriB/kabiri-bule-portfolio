@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import StudioCard from "./components/StudioCard";
+import ExecutiveSignalRoom from "./components/ExecutiveSignalRoom";
 import { studios } from "./data/studios";
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
           ))}
         </div>
       </section>
+
+      <ExecutiveSignalRoom />
 
       <section className="site-section split-section" id="writing">
         <div>
