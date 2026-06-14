@@ -80,26 +80,57 @@ function App() {
       </section>
 
       <section className="site-section about-section card" id="about">
-        <p className="eyebrow">About</p>
-        <h2>Research-grounded, interface-oriented, decision-useful.</h2>
-        <p>
-          My work sits at the intersection of urban research, data science, and
-          strategic communication. I design tools that help people make sense of
-          complex systems: where pressure is building, where evidence is noisy,
-          where institutions are struggling to respond, and where better
-          questions can lead to better decisions.
-        </p>
+        <div className="about-grid">
+          <div>
+            <p className="eyebrow">About</p>
+            <h2>Research-grounded, interface-oriented, decision-useful.</h2>
+          </div>
+
+          <div className="about-copy">
+            <p>
+              I work at the intersection of urban research, data science, and
+              strategic communication. My focus is not simply on producing
+              charts or dashboards, but on designing analytical environments
+              that help people interpret complexity and make better decisions.
+            </p>
+
+            <p>
+              Across public-sector, organisational, and private-sector contexts,
+              I am interested in how evidence becomes usable: how leaders read
+              pressure, diagnose institutional strain, compare systems, and ask
+              sharper questions before decisions harden.
+            </p>
+
+            <div className="about-capabilities">
+              <span>Urban diagnostics</span>
+              <span>Decision intelligence</span>
+              <span>Research translation</span>
+              <span>Spatial and survey analysis</span>
+              <span>Analytical interface design</span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="site-section contact-section" id="contact">
-        <p className="eyebrow">Contact</p>
-        <h2>
-          For collaborations, advisory work, research partnerships, and
-          analytical prototypes.
-        </h2>
-        <a className="primary-button" href="mailto:kabiri.bule@gmail.com">
-          Email Kabiri
-        </a>
+      <section className="site-section contact-section card" id="contact">
+        <div>
+          <p className="eyebrow">Contact</p>
+          <h2>
+            Let’s connect around research, analytics, and decision intelligence.
+          </h2>
+          <p>
+            I am open to analytical roles, research partnerships, advisory work,
+            and prototype projects where evidence needs to become clearer, more
+            usable, and more decision-relevant.
+          </p>
+        </div>
+
+        <div className="contact-actions">
+          <a className="primary-button" href="mailto:kabiri.bule@gmail.com">
+            Email Kabiri
+          </a>
+          <span>CV and detailed project notes available on request.</span>
+        </div>
       </section>
     </main>
   );
