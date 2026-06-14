@@ -7,6 +7,9 @@ import ExecutiveSignalRoom from "./components/ExecutiveSignalRoom";
 import GovernancePressureObservatory from "./components/GovernancePressureObservatory";
 import ResourceConversionLab from "./components/ResourceConversionLab";
 import RetailStrainSimulator from "./components/RetailStrainSimulator";
+import InsightCard from "./components/InsightCard";
+import { writingNotes } from "./data/writingNotes";
+import { researchItems } from "./data/researchItems";
 import { studios } from "./data/studios";
 
 function App() {
@@ -37,31 +40,43 @@ function App() {
       <ResourceConversionLab />
       <RetailStrainSimulator />
 
-      <section className="site-section split-section" id="writing">
-        <div>
+      <section className="site-section insights-section" id="writing">
+        <div className="section-heading">
           <p className="eyebrow">Writing / Briefing Notes</p>
           <h2>
             Clear thinking for public, organisational, and urban problems.
           </h2>
+          <p className="section-kicker">
+            Briefing notes, essays, and interpretive pieces that translate
+            research and analysis into usable strategic language for
+            collaborators, employers, public-sector partners, and senior
+            decision-makers.
+          </p>
         </div>
-        <p className="section-kicker">
-          Briefing notes, essays, and interpretive pieces that translate
-          research and analysis into usable strategic language for
-          collaborators, employers, public-sector partners, and senior
-          decision-makers.
-        </p>
+
+        <div className="insights-grid">
+          {writingNotes.map((item) => (
+            <InsightCard key={item.title} item={item} />
+          ))}
+        </div>
       </section>
 
-      <section className="site-section split-section" id="research">
-        <div>
+      <section className="site-section insights-section" id="research">
+        <div className="section-heading">
           <p className="eyebrow">Research & Publications</p>
           <h2>Urban governance, migration, trust, and institutional life.</h2>
+          <p className="section-kicker">
+            Selected research lanes connecting African cities, civic life,
+            institutional experience, spatial transformation, and
+            evidence-informed governance.
+          </p>
         </div>
-        <p className="section-kicker">
-          Selected publications, public writing, datasets, talks, and research
-          programmes connecting African cities, civic life, institutional
-          experience, and evidence-informed governance.
-        </p>
+
+        <div className="insights-grid">
+          {researchItems.map((item) => (
+            <InsightCard key={item.title} item={item} />
+          ))}
+        </div>
       </section>
 
       <section className="site-section about-section card" id="about">
