@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import StudioCard from "./components/StudioCard";
 import ExecutiveSignalRoom from "./components/ExecutiveSignalRoom";
 import GovernancePressureObservatory from "./components/GovernancePressureObservatory";
+import ResourceConversionLab from "./components/ResourceConversionLab";
 import { studios } from "./data/studios";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
       <ExecutiveSignalRoom />
       <GovernancePressureObservatory />
+      <ResourceConversionLab />
 
       <section className="site-section split-section" id="writing">
         <div>
