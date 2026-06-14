@@ -6,6 +6,7 @@ import StudioCard from "./components/StudioCard";
 import ExecutiveSignalRoom from "./components/ExecutiveSignalRoom";
 import GovernancePressureObservatory from "./components/GovernancePressureObservatory";
 import ResourceConversionLab from "./components/ResourceConversionLab";
+import RetailStrainSimulator from "./components/RetailStrainSimulator";
 import { studios } from "./data/studios";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <ExecutiveSignalRoom />
       <GovernancePressureObservatory />
       <ResourceConversionLab />
+      <RetailStrainSimulator />
 
       <section className="site-section split-section" id="writing">
         <div>
