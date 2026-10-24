@@ -1,7 +1,6 @@
 import "./App.css";
 
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import EditorialOpening from "./components/editorial/EditorialOpening";
 import StudioCard from "./components/StudioCard";
 import ExecutiveSignalRoom from "./components/ExecutiveSignalRoom";
 import GovernancePressureObservatory from "./components/GovernancePressureObservatory";
@@ -15,16 +14,15 @@ import { studios } from "./data/studios";
 function App() {
   return (
     <main className="app-shell">
-      <Header />
-      <Hero />
+      <EditorialOpening />
 
       <section className="site-section studios-section" id="studios">
         <div className="section-heading">
-          <p className="eyebrow">Decision Studios</p>
+          <p className="eyebrow">Experiments / Decision Studios</p>
           <h2>Prototype environments for reading complex systems.</h2>
           <p className="section-kicker">
-            Each studio is designed as a custom decision environment: part
-            analytical interface, part briefing room, part interpretive tool.
+            Four preserved interface experiments using illustrative datasets,
+            not live organisational estimates. Select a studio to explore it.
           </p>
         </div>
 
