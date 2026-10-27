@@ -33,6 +33,41 @@ const modes = [
   { id: "volume", title: "Flow through the system", note: "New requests versus completed requests in each model period." },
   { id: "backlog", title: "Unresolved stock", note: "Cases carried over when arrivals exceed completion capacity." }
 ];
+
+function PressureField({ zoneSummaries, focus, onSelect, windowSize }) {
+  const w = 930, h = 370, left = 75, right = 38, top = 50, bottom = 67;
+  const x0 = left, x1 = w - right, y0 = top, y1 = h - bottom;
+  const px = (v) => x0 + Math.min(2.5, Math.max(0, v)) / 2.5 * (x1 - x0);
+  const py = (v) => y1 - (Math.max(.5, Math.min(1, v)) - .5) / .5 * (y1 - y0);
+  const spots = zoneSummaries.map(z => {
+    const averageInflow = z.summary.incoming / windowSize;
+    return {...z, pressure: averageInflow ? z.summary.backlog / averageInflow : 0};
+  });
+  return <section className="ex-pressure-panel" aria-labelledby="pressure-field-heading">
+    <div className="ex-card-head"><div><SmallLabel>03 / Diagnostic field</SmallLabel><h2 id="pressure-field-heading">Pressure and delivery are not the same thing.</h2><p>Two service indicators, considered together. Select a labelled point to focus the time series and diagnostic above.</p></div><span className="ex-small-meta">Fictional districts / linked selection</span></div>
+    <div className="ex-pressure-grid">
+      <svg viewBox={"0 0 " + w + " " + h} role="group" aria-label="Interactive scatterplot: backlog relative to one period of incoming requests on the horizontal axis, timely completion rate on the vertical axis. Select a district point to filter the dashboard.">
+        {[0,.5,1,1.5,2,2.5].map(x => <g key={x}><line x1={px(x)} x2={px(x)} y1={y0} y2={y1} stroke="#58828a" opacity=".3" strokeDasharray="4 7"/><text x={px(x)} y={y1+26} textAnchor="middle" fill="#b7cece" fontSize="12">{x.toFixed(1)}</text></g>)}
+        {[.5,.6,.7,.8,.9,1].map(y => <g key={y}><line x1={x0} x2={x1} y1={py(y)} y2={py(y)} stroke="#58828a" opacity=".3" strokeDasharray="4 7"/><text x={x0-16} y={py(y)+4} textAnchor="end" fill="#b7cece" fontSize="12">{Math.round(y*100)}%</text></g>)}
+        <line x1={px(1)} x2={px(1)} y1={y0} y2={y1} stroke="#e4b089" opacity=".66" strokeDasharray="6 7"/>
+        <line x1={x0} x2={x1} y1={py(.85)} y2={py(.85)} stroke="#e4b089" opacity=".66" strokeDasharray="6 7"/>
+        <text x={(x0+x1)/2} y={h-10} textAnchor="middle" fill="#bed3d1" fontSize="13">Closing backlog ÷ average arrivals per period →</text>
+        <text x="21" y={(y0+y1)/2} transform={"rotate(-90 21 " + ((y0+y1)/2) + ")"} textAnchor="middle" fill="#bed3d1" fontSize="13">On-time among resolved →</text>
+        {spots.map((z,i) => {
+          const focused = focus === z.id, xx=px(z.pressure), yy=py(z.summary.onTime);
+          return <g key={z.id} role="button" tabIndex={0} aria-label={"Inspect " + z.name + ": timely " + pct(z.summary.onTime,1) + ", backlog-to-inflow ratio " + z.pressure.toFixed(2)} onClick={()=>onSelect(focused?"all":z.id)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();onSelect(focused?"all":z.id);}}} style={{cursor:"pointer"}}>
+            <title>{z.code + " / " + z.name + ": " + pct(z.summary.onTime,1) + " timely, stock/inflow " + z.pressure.toFixed(2)}</title>
+            <circle cx={xx} cy={yy} r={focused?17:13} fill={focused?"#f7cca3":"#a5d1c8"} stroke="#103944" strokeWidth="3"/>
+            <text x={xx} y={yy+4} textAnchor="middle" fontSize="11" fontWeight="800" fill="#103944">{i+1}</text>
+            <text x={xx+17} y={yy-17} fill={focused?"#f7cca3":"#ebf2eb"} fontSize="11" fontWeight="700">{z.code}</text>
+          </g>;
+        })}
+      </svg>
+      <div className="ex-pressure-reading"><span>HOW TO READ</span><h3>Look for combinations, not rankings.</h3><p>Points further right carry more unresolved cases relative to a typical period of new requests. Points higher up resolve a larger share of completed cases on time.</p><p>The crossed guide lines mark 1.0 period of inflow and 85% timely completion. They are <strong>illustrative reference lines, not operational standards.</strong></p><div><strong>{focus==="all"?"All six districts in view":"Selected / "+serviceZones.find(z=>z.id===focus)?.name}</strong><span>Click a point—or use the district table below—to link this plot with the history above.</span></div></div>
+    </div>
+  </section>;
+}
+
 export default function DecisionRoom() {
   const [focus, setFocus] = useState("all");
   const [windowSize, setWindowSize] = useState(12);
@@ -69,11 +104,12 @@ export default function DecisionRoom() {
         <div className="ex-decision"><SmallLabel>Diagnostic reading</SmallLabel><h3>{rise ? "Demand is accumulating faster than delivery." : "The queue is contracting in this window."}</h3><p>{rise ? "Closing stock exceeds opening stock. Check which districts account for the growth and what additional capacity would be needed before concluding that a single intervention is enough." : "The selected scenario reduces unresolved stock over the reporting window. This alone does not establish service quality or equity."}</p></div>
       </aside>
     </div>
+    <PressureField zoneSummaries={zoneSummaries} focus={focus} onSelect={setFocus} windowSize={windowSize}/>
     <div className="ex-lower-grid">
-      <section className="ex-zone-card" aria-labelledby="zone-heading"><div className="ex-card-head"><div><SmallLabel>03 / Place comparison</SmallLabel><h2 id="zone-heading">Where is pressure concentrating?</h2></div><span className="ex-small-meta">Select a district to investigate</span></div>
+      <section className="ex-zone-card" aria-labelledby="zone-heading"><div className="ex-card-head"><div><SmallLabel>04 / Place comparison</SmallLabel><h2 id="zone-heading">Where is pressure concentrating?</h2></div><span className="ex-small-meta">Select a district to investigate</span></div>
         <div className="ex-zone-table"><div className="ex-zone-table-head"><span>Fictional district</span><span>On-time among resolved</span><span>Closing backlog</span></div>{zoneSummaries.map(z=><button key={z.id} type="button" className={focus===z.id?"selected":""} onClick={()=>setFocus(focus===z.id?"all":z.id)} aria-pressed={focus===z.id}><span><b>{z.code}</b> {z.name}</span><span className="ex-zone-on-time"><span>{pct(z.summary.onTime,1)}</span><RatioBar value={z.summary.onTime}/></span><strong>{fmt(z.summary.backlog)}</strong></button>)}</div>
         <div className="ex-insight-tag">{zone ? "Focused on " + zone.name + ". Select it again to return to all districts." : "All districts are shown. Select any row to isolate its contribution to the system."}</div></section>
-      <section className="ex-logic-card" aria-labelledby="logic-heading"><SmallLabel>04 / Model anatomy</SmallLabel><h2 id="logic-heading">A queue, not just a score.</h2><p>Each period starts with an unresolved stock. New requests arrive; limited capacity resolves some; the remainder carries forward.</p><div className="ex-formula"><span>Opening cases + new arrivals</span><b>−</b><span>Cases resolved</span><b>=</b><span>Closing backlog</span></div><p>Capacity is capped by available cases. The timely-completion share is an illustrative function of queue pressure and district assumptions. It is <strong>not</strong> an empirically estimated performance function.</p><Note title="What this can and cannot decide">The demonstration exposes system trade-offs and arithmetic consistency. It cannot diagnose real causes, guarantee queue reduction, justify resource allocation or estimate an intervention's causal effect without calibrated operational data and uncertainty analysis.</Note></section>
+      <section className="ex-logic-card" aria-labelledby="logic-heading"><SmallLabel>05 / Model anatomy</SmallLabel><h2 id="logic-heading">A queue, not just a score.</h2><p>Each period starts with an unresolved stock. New requests arrive; limited capacity resolves some; the remainder carries forward.</p><div className="ex-formula"><span>Opening cases + new arrivals</span><b>−</b><span>Cases resolved</span><b>=</b><span>Closing backlog</span></div><p>Capacity is capped by available cases. The timely-completion share is an illustrative function of queue pressure and district assumptions. It is <strong>not</strong> an empirically estimated performance function.</p><Note title="What this can and cannot decide">The demonstration exposes system trade-offs and arithmetic consistency. It cannot diagnose real causes, guarantee queue reduction, justify resource allocation or estimate an intervention's causal effect without calibrated operational data and uncertainty analysis.</Note></section>
     </div>
     <div className="ex-endnote">Reproducibility: deterministic local data, six fictional districts, twelve periods, no API calls or personal information. Code: <a href="https://github.com/KabiriB/kabiri-bule-portfolio/tree/chatgpt/portfolio-lab-v2/src/data">scenario calculation module ↗</a>.</div>
   </ExperienceFrame>;
