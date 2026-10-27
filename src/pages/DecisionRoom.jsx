@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { serviceZones, simulateServices, summarizeServices, aggregateByPeriod, clamp, fmt, pct } from "../data/syntheticService";
+import { serviceZones, simulateServices, summarizeServices, aggregateByPeriod, fmt, pct } from "../data/syntheticService";
 import { ExperienceFrame, Note, SmallLabel } from "./ExperienceFrame";
 import "./Experiences.css";
 
@@ -77,3 +77,4 @@ export default function DecisionRoom() {
     </div>
     <div className="ex-endnote">Reproducibility: deterministic local data, six fictional districts, twelve periods, no API calls or personal information. Code: <a href="https://github.com/KabiriB/kabiri-bule-portfolio/tree/chatgpt/portfolio-lab-v2/src/data">scenario calculation module ↗</a>.</div>
   </ExperienceFrame>;
+}
