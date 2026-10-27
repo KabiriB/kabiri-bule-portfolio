@@ -76,11 +76,61 @@ try {
   await waitFor(() => evaluate("Boolean(document.querySelector('#kb-studio-panel'))"), "studio rendering");
   assert.equal(await evaluate("document.querySelector('#kb-studio-panel h2')?.textContent.includes('urban pressure')"), true);
 
+  // Verify that the redesigned hero uses the provenance-backed locator and not the old ward silhouette.
+  assert.equal(await evaluate("document.querySelector('.kb-hero-figure img')?.getAttribute('src')?.includes('research-geographies.svg')"), true);
+  assert.equal(await evaluate("document.querySelector('.kb-hero-figure img')?.naturalWidth > 0"), true);
+  assert.equal(await evaluate("document.querySelectorAll('.kb-entrance-grid a').length"), 3);
+
+  // Route 1: an independently functioning multi-district decision dashboard.
+  await evaluate("window.location.hash = '#/dashboard'");
+  await waitFor(() => evaluate("Boolean(document.querySelector('#ex-capacity'))"), "dashboard route");
+  assert.match(await evaluate("document.title"), /Signals Room/);
+  const backlog0 = await evaluate("document.querySelector('.ex-kpi-accent strong').textContent");
+  await evaluate("document.querySelector('#ex-capacity').focus()");
+  await call("Input.dispatchKeyEvent", { type: "keyDown", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 39 });
+  await call("Input.dispatchKeyEvent", { type: "keyUp", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 39 });
+  await waitFor(() => evaluate("document.querySelector('#ex-capacity').value === '5'"), "capacity scenario slider");
+  const backlog1 = await evaluate("document.querySelector('.ex-kpi-accent strong').textContent");
+  assert.notEqual(backlog0, backlog1, "Capacity scenario updates aggregate backlog");
+  await evaluate("Array.from(document.querySelectorAll('.ex-zone-table button')).find(x=>x.textContent.includes('North')).click()");
+  await waitFor(() => evaluate("document.querySelector('select[aria-label=\"Select synthetic district\"]')?.value === 'north'"), "district filter");
+  await evaluate("Array.from(document.querySelectorAll('.ex-chart-switch button')).find(x=>x.textContent==='Flow').click()");
+  await waitFor(() => evaluate("document.querySelector('#signals-history')?.textContent.includes('Flow')"), "chart view switch");
+
+  // Route 2: weighted-average reversal plus standardization.
+  await evaluate("window.location.hash = '#/experiment'");
+  await waitFor(() => evaluate("Boolean(document.querySelector('#sim-treated'))"), "Simpson experiment");
+  assert.equal(await evaluate("document.querySelector('.ex-delta strong')?.textContent?.includes('-16.0')"), true, "Starting pooled reversal");
+  await evaluate("document.querySelector('#sim-treated').focus()");
+  await call("Input.dispatchKeyEvent", { type: "keyDown", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 39 });
+  await call("Input.dispatchKeyEvent", { type: "keyUp", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 39 });
+  await waitFor(() => evaluate("document.querySelector('#sim-treated')?.value === '25'"), "statistical experiment slider");
+  assert.equal(await evaluate("document.querySelector('.ex-delta strong')?.textContent?.includes('-14.0')"), true);
+  const std = await evaluate("document.querySelector('.ex-standard-result strong')?.textContent");
+  assert.match(std, /8\.0/);
+
+  // Route 3: budget/output/outcome pipeline and design reading.
+  await evaluate("window.location.hash = '#/monitoring'");
+  await waitFor(() => evaluate("Boolean(document.querySelector('#mel-completion'))"), "M&E lab");
+  const before = await evaluate("Array.from(document.querySelectorAll('.ex-funnel-stage strong')).map(x=>x.textContent)");
+  await evaluate("document.querySelector('#mel-completion').focus()");
+  await call("Input.dispatchKeyEvent", { type: "keyDown", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 39 });
+  await call("Input.dispatchKeyEvent", { type: "keyUp", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 39 });
+  await waitFor(() => evaluate("document.querySelector('#mel-completion')?.value === '73'"), "M&E completion slider");
+  const after = await evaluate("Array.from(document.querySelectorAll('.ex-funnel-stage strong')).map(x=>x.textContent)");
+  assert.notDeepEqual(after, before, "Completion changes downstream results");
+  await evaluate("Array.from(document.querySelectorAll('.ex-design-choices button')).find(x=>x.textContent.includes('Randomized')).click()");
+  await waitFor(() => evaluate("document.querySelector('.ex-evaluation-reading')?.textContent.includes('assignment effect')"), "M&E design selection");
+
+  // Reloading a deep link directly must work on static hosting.
+  await call("Page.navigate", { url: root + "#/dashboard" });
+  await waitFor(() => evaluate("Boolean(document.querySelector('#ex-capacity'))"), "dashboard deep link after reload");
+
   await call("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
   await sleep(450);
   const mobile = await evaluate("({scrollWidth:document.documentElement.scrollWidth,innerWidth:window.innerWidth})");
   assert.ok(mobile.scrollWidth <= mobile.innerWidth + 2, "Mobile layout has no horizontal page overflow: " + JSON.stringify(mobile));
-  console.log("PASS: threshold keyboard response, subgroup recalculation, project filtering, studio mounting and mobile overflow.");
+  console.log("PASS: provenance map, React hash routes, three functioning laboratory controls, output recalculation, studio controls, deep-link reload and mobile overflow.");
 } finally {
   try { socket?.close(); } catch { /* empty */ }
   proc.kill("SIGTERM");
