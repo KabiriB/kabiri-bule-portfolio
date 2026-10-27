@@ -92,6 +92,9 @@ try {
   await waitFor(() => evaluate("document.querySelector('#ex-capacity').value === '5'"), "capacity scenario slider");
   const backlog1 = await evaluate("document.querySelector('.ex-kpi-accent strong').textContent");
   assert.notEqual(backlog0, backlog1, "Capacity scenario updates aggregate backlog");
+  assert.equal(await evaluate("document.querySelectorAll('.ex-pressure-grid svg g[role=button]').length"), 6);
+  await evaluate("document.querySelector('.ex-pressure-grid svg g[aria-label*=Central]').dispatchEvent(new MouseEvent('click',{bubbles:true}))");
+  await waitFor(() => evaluate("document.querySelector('select[aria-label=\"Select synthetic district\"]')?.value === 'central'"), "scatterplot linked district selection");
   await evaluate("Array.from(document.querySelectorAll('.ex-zone-table button')).find(x=>x.textContent.includes('North')).click()");
   await waitFor(() => evaluate("document.querySelector('select[aria-label=\"Select synthetic district\"]')?.value === 'north'"), "district filter");
   await evaluate("Array.from(document.querySelectorAll('.ex-chart-switch button')).find(x=>x.textContent==='Flow').click()");
