@@ -246,3 +246,13 @@ body{background:var(--kb-paper);color:var(--kb-ink)}
 @media(max-width:1200px){.kb-experience-entrances{padding-left:32px;padding-right:32px}.kb-entrance-grid{grid-template-columns:1.35fr 1fr}.kb-entrance-feature{grid-row:span 2}.kb-entrance-side{min-height:0}.kb-entrance-symbol,.kb-entrance-mel-steps{min-height:120px}.kb-entrance-feature .kb-dashboard-art{min-height:340px}}
 @media(max-width:820px){.kb-experience-entrances{padding:72px 32px}.kb-entrance-grid{grid-template-columns:1fr 1fr}.kb-entrance-feature{grid-column:span 2;grid-row:auto}.kb-entrance-feature .kb-dashboard-art{min-height:240px}.kb-entrance-side{min-height:385px}}
 @media(max-width:580px){.kb-experience-entrances{padding:58px 18px}.kb-entrance-grid{grid-template-columns:1fr}.kb-entrance-feature{grid-column:auto}.kb-entrance-side{min-height:0}.kb-entrance-header h2{font-size:41px}.kb-dashboard-art{min-height:190px}.kb-entrance-content,.kb-entrance-side{padding:21px}}
+
+
+/* Real, model-derived preview: legible numerical evidence instead of a decorative chart. */
+.kb-dashboard-art-stats div{flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-width:0}
+.kb-dashboard-art-stats b{font-family:var(--kb-sans);font-size:clamp(14px,1.5vw,19px);font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.035em}
+.kb-dashboard-art svg{max-height:200px}
+.kb-dashboard-art-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:7px 18px;line-height:1.6}
+.kb-dashboard-art-foot span{white-space:normal}
+.kb-dashboard-art-foot i{display:inline-block;width:12px;height:3px;margin-right:5px;vertical-align:middle}
+@media(max-width:580px){.kb-dashboard-art-stats div{padding:7px}.kb-dashboard-art-stats b{font-size:13px}.kb-dashboard-art{padding:13px}}
