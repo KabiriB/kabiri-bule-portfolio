@@ -87,6 +87,14 @@ try {
   await evaluate("window.location.hash = '#/dashboard'");
   await waitFor(() => evaluate("Boolean(document.querySelector('#ex-capacity'))"), "dashboard route");
   assert.match(await evaluate("document.title"), /Signals Room/);
+  assert.equal(await evaluate("document.querySelector('#decision-introduction-title')?.textContent.includes('Six districts')"), true, "Dashboard begins with a coherent service case");
+  assert.equal(await evaluate("document.querySelector('#decision-introduction-title').compareDocumentPosition(document.querySelector('.ex-kpi-grid')) & Node.DOCUMENT_POSITION_FOLLOWING"), 4, "Decision context appears before numerical KPIs");
+  await evaluate("Array.from(document.querySelectorAll('.ex-introduction-actions button')).find(b => b.textContent.includes('10% more capacity')).click()");
+  await waitFor(() => evaluate("document.querySelector('#ex-capacity').value === '10'"), "guided scenario action");
+  assert.equal(await evaluate("document.querySelector('#ex-demand').value"), "0", "Guided scenario changes only capacity");
+  await evaluate("document.querySelector('.ex-reset').click()");
+  await waitFor(() => evaluate("document.querySelector('#ex-capacity').value === '0'"), "reset guided scenario");
+
   const backlog0 = await evaluate("document.querySelector('.ex-kpi-accent strong').textContent");
   assert.equal(await evaluate("document.querySelectorAll('.ex-impact-metric').length"), 3, "Scenario comparison has three analytical metrics");
   assert.equal(await evaluate("document.querySelector('.ex-impact-accounting p')?.textContent?.includes('reconciles exactly')"), true, "Stock-flow accounting balances at baseline");
