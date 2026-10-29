@@ -14,6 +14,10 @@ on:
       - vite.config.js
   workflow_dispatch:
 
+concurrency:
+  group: portfolio-v2-static-stage
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
