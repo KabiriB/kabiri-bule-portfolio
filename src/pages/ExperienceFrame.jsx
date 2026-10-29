@@ -1,8 +1,8 @@
 import "./Experiences.css";
 export function SmallLabel({children}) { return <span className="ex-label">{children}</span>; }
 export function Note({title,children}) { return <aside className="ex-note"><strong>{title}</strong><p>{children}</p></aside>; }
-export function ExperienceFrame({kind,title,subtitle,tag,children}) {
-  return <div className="ex-page">
+export function ExperienceFrame({kind,title,subtitle,tag,children,className = ''}) {
+  return <div className={"ex-page " + className}>
     <a className="ex-skip" href="#ex-main">Skip to interactive content</a>
     <header className="ex-header">
       <a href="#top" className="ex-brand">KB<span>.</span><small>AN ATLAS OF QUESTIONS</small></a>
