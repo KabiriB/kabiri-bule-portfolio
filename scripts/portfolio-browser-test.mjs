@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import assert from "node:assert/strict";
@@ -99,6 +99,12 @@ try {
   assert.equal(await evaluate("Boolean(document.querySelector('.ex-chart-key-reference'))"), true, "Baseline reference overlays current trend");
   assert.equal(await evaluate("document.querySelector('.ex-impact-accounting p')?.textContent?.includes('reconciles exactly')"), true, "Adjusted scenario stock flow still reconciles");
   assert.equal(await evaluate("Boolean(document.querySelector('.ex-export'))"), true, "Synthetic CSV export control exists");
+  // Save an actual screenshot of the calculated reference/scenario comparison.
+  await call("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
+  await evaluate("document.querySelector('.ex-impact').scrollIntoView({block:'start'})");
+  await sleep(300);
+  const scenarioShot = await call("Page.captureScreenshot", { format: "png", fromSurface: true });
+  writeFileSync("dashboard-scenario-comparison.png", Buffer.from(scenarioShot.data, "base64"));
   assert.equal(await evaluate("document.querySelectorAll('.ex-pressure-grid svg g[role=button]').length"), 6);
   await evaluate("document.querySelector('.ex-pressure-grid svg g[aria-label*=Central]').dispatchEvent(new MouseEvent('click',{bubbles:true}))");
   await waitFor(() => evaluate("document.querySelector('select[aria-label=\"Select synthetic district\"]')?.value === 'central'"), "scatterplot linked district selection");
