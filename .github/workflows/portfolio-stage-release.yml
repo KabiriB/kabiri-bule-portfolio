@@ -9,6 +9,9 @@ on:
       - .github/workflows/portfolio-stage-release.yml
       - index.html
       - public/social-preview.html
+      - 'src/**'
+      - 'public/**'
+      - vite.config.js
   workflow_dispatch:
 
 permissions:
