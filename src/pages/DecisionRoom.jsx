@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { serviceZones, simulateServices, summarizeServices, aggregateByPeriod, fmt, pct } from "../data/syntheticService";
 import { ExperienceFrame, Note, SmallLabel } from "./ExperienceFrame";
 import ScenarioComparison from "./ScenarioComparison";
+import DecisionIntroduction from "./DecisionIntroduction";
 import "./Experiences.css";
 
 const PLOT_W = 920, PLOT_H = 265, LEFT = 50, RIGHT = 20, TOP = 20, BOTTOM = 38;
@@ -113,7 +114,18 @@ export default function DecisionRoom() {
     anchor.remove();
     setTimeout(() => URL.revokeObjectURL(href), 0);
   };
-  return <ExperienceFrame kind="Decision intelligence / Interactive systems" title={<>The System <em>Signals Room.</em></>} subtitle="Follow demand, delivery and accumulating pressure. Then change the assumptions and watch the consequences move across the entire synthetic system." tag="Working demonstrator · fictional service districts">
+  const scrollToDashboard = () => document.getElementById("ex-dashboard-data")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const startCapacityCase = () => {
+    setFocus("all");
+    setWindowSize(12);
+    setMode("volume");
+    setDemandShift(0);
+    setCapacityShift(10);
+    scrollToDashboard();
+  };
+  return <ExperienceFrame className="ex-dashboard-page" kind="A worked decision case / Interactive systems" title={<>The System <em>Signals Room.</em></>} subtitle="What happens when public-service requests arrive faster than district offices can resolve them? Follow a fictional service system, test an intervention, and judge what the numbers can—or cannot—tell us." tag="Guided demonstrator · fictional service districts">
+    <DecisionIntroduction onStart={scrollToDashboard} onScenario={startCapacityCase} />
+    <div id="ex-dashboard-data" className="ex-data-entry"><span className="ex-label">01 / Inspect the evidence</span><h2>What is happening across the six districts?</h2><p>Begin with the reference run. The numbers below describe the synthetic service model; they are not measurements of any real city. Change the reporting window, select a district, or test a capacity scenario.</p></div>
     <div className="ex-alert"><span className="ex-green-indicator" /> FUNCTIONING SCENARIO ENGINE <span>All numbers are generated from explicit fictional assumptions. Not a dashboard of actual Gauteng or municipal performance.</span></div>
     <div className="ex-controls-line">
       <div><SmallLabel>Reporting window</SmallLabel><div className="ex-segments">{[3,6,12].map(n => <button type="button" aria-pressed={windowSize===n} className={windowSize===n?"active":""} onClick={()=>setWindowSize(n)} key={n}>Last {n}</button>)}</div></div>
