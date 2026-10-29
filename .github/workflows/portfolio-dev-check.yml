@@ -64,6 +64,7 @@ jobs:
             dashboard-full.png
             experiment-full.png
             monitoring-full.png
+            docs/og-preview.png
           if-no-files-found: ignore
 
       - name: Package complete React source for local review
@@ -72,6 +73,8 @@ jobs:
           name: portfolio-react-source-v2
           path: |
             src/
+            docs/
+            README.md
             scripts/
             public/
             index.html
