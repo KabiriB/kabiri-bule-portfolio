@@ -59,3 +59,20 @@ jobs:
             git commit -m "Stage tested GitHub Pages bundle on development branch"
             git push origin HEAD:chatgpt/portfolio-lab-v2
           fi
+
+      - name: Package the exact built release and React source
+        uses: actions/upload-artifact@v4
+        with:
+          name: kabiri-portfolio-v2-dashboard-audited
+          path: |
+            src/
+            public/
+            scripts/
+            docs/
+            README.md
+            index.html
+            package.json
+            package-lock.json
+            vite.config.js
+            eslint.config.js
+          if-no-files-found: error
