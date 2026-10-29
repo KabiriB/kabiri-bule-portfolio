@@ -58,3 +58,11 @@
 .ex-pressure-reading>div span{font-size:11px;color:#c0d0ce;display:block;margin-top:7px}
 @media(max-width:960px){.ex-pressure-grid{grid-template-columns:1fr}.ex-pressure-reading{border-left:0;border-top:1px solid #71959182;padding:20px 0 0}.ex-pressure-panel{padding:24px 19px}}
 @media(max-width:540px){.ex-pressure-panel{padding:20px 12px}.ex-pressure-panel .ex-card-head h2{font-size:27px}.ex-pressure-grid{gap:16px}.ex-pressure-reading h3{font-size:23px}}
+
+/* The decision experience introduces its case before any analytical readout. */
+.ex-dashboard-page .ex-page-hero{padding-bottom:40px}
+.ex-dashboard-page .ex-page-hero h1{font-size:clamp(48px,5.3vw,80px);margin:22px 0 15px}
+.ex-dashboard-page .ex-page-hero>p{font-size:16px;max-width:980px}
+.ex-data-entry{scroll-margin-top:22px;padding:25px 0 9px;border-top:1px solid #ccd6ce}
+.ex-data-entry h2{font:400 clamp(30px,3vw,43px)/1.25 "Playfair Display",Georgia,serif;letter-spacing:-.045em;margin:11px 0}
+.ex-data-entry p{max-width:860px;color:#526b6c;font-size:14px;line-height:1.8;margin:0 0 10px}
