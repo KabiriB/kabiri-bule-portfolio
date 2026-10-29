@@ -24,6 +24,8 @@ jobs:
         run: npm run build
       - name: Verify synthetic service accounting and aggregation
         run: node scripts/service-model-test.mjs
+      - name: Verify geography aspect and provenance
+        run: node scripts/map-geometry-test.mjs
       - name: Lint authored source
         run: npx eslint src
       - name: Review screenshots and DOM smoke test
@@ -45,6 +47,7 @@ jobs:
           "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,9600 --screenshot=portfolio-full-desktop.png http://127.0.0.1:4173/kabiri-bule-portfolio/ >/dev/null
 
           "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,7800 --screenshot=dashboard-full.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/dashboard" >/dev/null
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,960 --screenshot=dashboard-introduction.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/dashboard" >/dev/null
           "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,7600 --screenshot=experiment-full.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/experiment" >/dev/null
           "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,7600 --screenshot=monitoring-full.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/monitoring" >/dev/null
           CHROME_BINARY="$BROWSER" node scripts/portfolio-browser-test.mjs
@@ -64,6 +67,7 @@ jobs:
             portfolio-full-desktop.png
             portfolio-dom.html
             dashboard-full.png
+            dashboard-introduction.png
             dashboard-scenario-comparison.png
             experiment-full.png
             monitoring-full.png
