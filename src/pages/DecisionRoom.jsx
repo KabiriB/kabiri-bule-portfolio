@@ -60,11 +60,13 @@ function PressureField({ zoneSummaries, focus, onSelect, windowSize }) {
         <text x="21" y={(y0+y1)/2} transform={"rotate(-90 21 " + ((y0+y1)/2) + ")"} textAnchor="middle" fill="#bed3d1" fontSize="13">On-time among resolved →</text>
         {spots.map((z,i) => {
           const focused = focus === z.id, xx=px(z.pressure), yy=py(z.summary.onTime);
+          const labelDx = [20, -22, 19, 20, 20, -19][i];
+          const labelDy = [-20, -22, -20, 27, -22, 25][i];
           return <g key={z.id} role="button" tabIndex={0} aria-label={"Inspect " + z.name + ": timely " + pct(z.summary.onTime,1) + ", backlog-to-inflow ratio " + z.pressure.toFixed(2)} onClick={()=>onSelect(focused?"all":z.id)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();onSelect(focused?"all":z.id);}}} style={{cursor:"pointer"}}>
             <title>{z.code + " / " + z.name + ": " + pct(z.summary.onTime,1) + " timely, stock/inflow " + z.pressure.toFixed(2)}</title>
             <circle cx={xx} cy={yy} r={focused?17:13} fill={focused?"#f7cca3":"#a5d1c8"} stroke="#103944" strokeWidth="3"/>
             <text x={xx} y={yy+4} textAnchor="middle" fontSize="11" fontWeight="800" fill="#103944">{i+1}</text>
-            <text x={xx+17} y={yy-17} fill={focused?"#f7cca3":"#ebf2eb"} fontSize="11" fontWeight="700">{z.code}</text>
+            <text x={xx + labelDx} y={yy + labelDy} textAnchor={labelDx < 0 ? "end" : "start"} fill={focused?"#f7cca3":"#ebf2eb"} fontSize="12" fontWeight="750">{z.code}</text>
           </g>;
         })}
       </svg>
@@ -117,7 +119,7 @@ export default function DecisionRoom() {
       <div><SmallLabel>Reporting window</SmallLabel><div className="ex-segments">{[3,6,12].map(n => <button type="button" aria-pressed={windowSize===n} className={windowSize===n?"active":""} onClick={()=>setWindowSize(n)} key={n}>Last {n}</button>)}</div></div>
       <div><SmallLabel>District filter</SmallLabel><select aria-label="Select synthetic district" value={focus} onChange={e=>setFocus(e.target.value)}><option value="all">All six districts</option>{serviceZones.map(z=><option key={z.id} value={z.id}>{z.code} / {z.name}</option>)}</select></div>
       <button type="button" className="ex-reset" onClick={reset}>↺ Reset assumptions</button>
-      <button type="button" className="ex-export" onClick={exportScenarioCsv}>↓ Export synthetic district CSV</button>
+      <button type="button" className="ex-export" onClick={exportScenarioCsv}>↓ Export six-district scenario CSV</button>
     </div>
     <div className="ex-kpi-grid">
       <div className="ex-kpi"><span>Demand / requests arriving</span><strong>{fmt(overview.incoming)}</strong><small>Across selected periods</small></div>
