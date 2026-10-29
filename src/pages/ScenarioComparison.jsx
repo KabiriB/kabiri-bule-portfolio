@@ -2,7 +2,8 @@ import { fmt, pct } from "../data/syntheticService";
 import "./ScenarioComparison.css";
 
 function changeLabel(current, reference, percent = false) {
-  const change = percent ? (current - reference) * 100 : current - reference;
+  // Difference of the displayed one-decimal rates keeps the visible arithmetic consistent.
+  const change = percent ? (Math.round(current * 1000) - Math.round(reference * 1000)) / 10 : current - reference;
   if (Math.abs(change) < 0.0001) return percent ? "No change (0.0 pp)" : "No change (0)";
   const magnitude = percent ? Math.abs(change).toFixed(1) + " pp" : fmt(Math.abs(change)) + " cases";
   return (change > 0 ? "+" : "−") + magnitude;
