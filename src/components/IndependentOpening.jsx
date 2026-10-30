@@ -3,8 +3,6 @@ import {simulateServices, summarizeServices, aggregateByPeriod, fmt} from "../da
 import "./IndependentOpening.css";
 
 const reference = simulateServices();
-const baseline = summarizeServices(reference);
-const baselineTrend = aggregateByPeriod(reference,12);
 const zones = [{id:"north",name:"North"},{id:"central",name:"Central"},{id:"west",name:"West"},{id:"east",name:"East"},{id:"river",name:"River"},{id:"south",name:"South"}];
 
 function TrendChart({rows,referenceRows}) {
