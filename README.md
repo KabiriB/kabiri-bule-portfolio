@@ -1,6 +1,14 @@
 # Kabiri Bule — Research, Data & Technology
 
-A React/Vite portfolio of published research, visual scholarship, analytical interfaces and exploratory software.
+An evidence-led React/Vite portfolio of published research, real public-safe survey geography, visual scholarship, interactive analytical experiences and exploratory software.
+
+## The interactive opening: Musina evidence atlas
+
+The home page opens with **real, public-safe ward-level evidence** from [Musina in Motion](https://github.com/KabiriB/musina-in-motion). Visitors can select any of six study wards and switch between three indicators: international border crossing at least yearly, Zimbabwe-born respondents, and self-reported permanent residence. Each rate is displayed with its original numerator and valid denominator.
+
+Default: **Ward 2, 87/107 = 81.3%** crossing at least yearly. The entire eligible study sample is **n=629**; this is a fieldwork sample, not a representative municipal population estimate. The map uses the official QA-patched public ward polygons, simplified only for SVG display. Wards 3–6 also appear in an enlarged inset because they are too small at the regional scale. No household locations or GPS tracks are displayed.
+
+Source paths: `src/data/musinaEvidence.js` and `src/data/musinaGeography.js`. Source evidence: `musina_ward_summary_app_v1.json` and `musina_wards_1_6_official_app_ready_v3_QA_PATCHED.geojson` in the public Musina repo. Assertions on sample sums, denominators and map availability run in `scripts/musina-hero-evidence-test.mjs`.
 
 ## The website
 
@@ -38,11 +46,11 @@ npm run preview
 
 The development GitHub Actions workflow installs dependencies, builds the Vite bundle, lints authored React/JS sources, captures desktop/mobile/full-page Chromium images, and executes `scripts/portfolio-browser-test.mjs`.
 
-Browser checks cover actual interactions: classifier threshold and subgroup, project filtering, the existing studios, the new dashboard's capacity assumption and linked district selection, Simpson's paradox sliders, M&E conversion controls and evaluation-design selection, direct deep-link reload, and mobile horizontal overflow. This is **not** a substitute for full accessibility, editorial or external-link audits.
+Browser checks cover the real Musina ward and indicator selections, as well as actual interactions: classifier threshold and subgroup, project filtering, the existing studios, the new dashboard's capacity assumption and linked district selection, Simpson's paradox sliders, M&E conversion controls and evaluation-design selection, direct deep-link reload, and mobile horizontal overflow. This is **not** a substitute for full accessibility, editorial or external-link audits.
 
 ## Content integrity
 
-- Hero SVG: an Africa locator based on Natural Earth 1:110m outlines with approximate Accra, Nairobi, Johannesburg and Musina positions. It is not a movement map, and no respondent-level data are plotted.
+- Immersive opening: geographically grounded **Musina ward choropleth** representing rates among surveyed respondents. It does not display population estimates, migration routes or individual-level observations. The opening's data and geometry are traceable to the public GEMMS atlas. The historical Africa locator remains an asset but is not the V3 homepage opening.
 - Musina ward geography asset: preserved from the earlier experimental branch, adapted from public atlas geometry; **not** individual locations.
 - Visual-essay image: retained approved local crop; the original essay credits photographer Loren Landau. Confirm publication permissions for any future redistribution beyond the original context.
 - The dashboard uses fictional districts, assumptions and synthetic periods. It is not a real service or municipal monitoring system.
@@ -52,7 +60,7 @@ Browser checks cover actual interactions: classifier threshold and subgroup, pro
 
 ## Releasing safely
 
-**Production is currently unchanged.** The release-candidate branch is `chatgpt/portfolio-lab-v2`. Its dedicated staging workflow builds and commits the full static Vite output to **that branch's** `docs/` directory only. It does not publish anything.
+**Production is currently unchanged.** The V3 release-candidate branch is `chatgpt/portfolio-discovery-v3`. Its dedicated staging workflow builds and commits the full static Vite output to **that branch's** `docs/` directory only. It does not publish anything.
 
 1. Review the generated browser screenshots and interact with the React build locally.
 2. Confirm links, names, ownership, image permissions, responsive layout and all disclaimers.
