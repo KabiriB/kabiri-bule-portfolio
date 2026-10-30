@@ -4,7 +4,7 @@ name: Prepare static GitHub Pages release candidate
 # and does not run any Pages deployment action.
 on:
   push:
-    branches: [chatgpt/portfolio-lab-v2]
+    branches: [chatgpt/portfolio-discovery-v3]
     paths:
       - .github/workflows/portfolio-stage-release.yml
       - index.html
@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: portfolio-v2-static-stage
+  group: portfolio-v3-static-stage
   cancel-in-progress: true
 
 permissions:
@@ -51,21 +51,21 @@ jobs:
           test -s docs/og-preview.png
       - name: Stage built files only on the development branch
         run: |
-          test "$(git branch --show-current)" = "chatgpt/portfolio-lab-v2"
+          test "$(git branch --show-current)" = "chatgpt/portfolio-discovery-v3"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A docs/
           if ! git diff --cached --quiet; then
             git commit -m "Stage tested GitHub Pages bundle on development branch"
-            git fetch origin chatgpt/portfolio-lab-v2
-            git rebase origin/chatgpt/portfolio-lab-v2
-            git push origin HEAD:chatgpt/portfolio-lab-v2
+            git fetch origin chatgpt/portfolio-discovery-v3
+            git rebase origin/chatgpt/portfolio-discovery-v3
+            git push origin HEAD:chatgpt/portfolio-discovery-v3
           fi
 
       - name: Package the exact built release and React source
         uses: actions/upload-artifact@v4
         with:
-          name: kabiri-portfolio-v2-dashboard-audited
+          name: kabiri-portfolio-v3-discovery
           path: |
             src/
             public/
