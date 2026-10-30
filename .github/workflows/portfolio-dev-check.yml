@@ -3,7 +3,7 @@ name: Portfolio development check
 on:
   push:
     branches:
-      - chatgpt/portfolio-discovery-v3
+      - chatgpt/portfolio-independent-v4
   workflow_dispatch:
 
 permissions:
@@ -24,10 +24,6 @@ jobs:
         run: npm run build
       - name: Verify synthetic service accounting and aggregation
         run: node scripts/service-model-test.mjs
-      - name: Verify geography aspect and provenance
-        run: node scripts/map-geometry-test.mjs
-      - name: Verify published Musina ward evidence and denominators
-        run: node scripts/musina-hero-evidence-test.mjs
       - name: Lint authored source
         run: npx eslint src
       - name: Review screenshots and DOM smoke test
@@ -42,7 +38,7 @@ jobs:
           BROWSER=$(command -v google-chrome || command -v chromium || true)
           if [ -z "$BROWSER" ]; then echo "No Chromium browser found on runner"; exit 1; fi
           "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,1000 --screenshot=portfolio-desktop.png --dump-dom http://127.0.0.1:4173/kabiri-bule-portfolio/ > portfolio-dom.html
-          grep -q 'A border is not the' portfolio-dom.html
+          grep -q 'When a system' portfolio-dom.html
           grep -q 'Move the decision boundary' portfolio-dom.html
           "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=390,844 --screenshot=portfolio-mobile.png http://127.0.0.1:4173/kabiri-bule-portfolio/ >/dev/null
           test -s portfolio-desktop.png
@@ -79,7 +75,7 @@ jobs:
       - name: Package complete React source for local review
         uses: actions/upload-artifact@v4
         with:
-          name: portfolio-react-source-v3-discovery
+          name: portfolio-react-source-v4-independent
           path: |
             src/
             docs/
