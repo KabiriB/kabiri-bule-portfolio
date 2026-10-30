@@ -9,7 +9,7 @@
 .iv-hero-content{display:grid;grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);gap:clamp(20px,5vw,86px);padding:60px 0 56px;align-items:center}
 .iv-editorial{min-width:0}
 .iv-overline{display:block;font-size:11px;letter-spacing:.14em;font-weight:800;color:var(--iv-coral);margin:0 0 28px}
-.iv-editorial h1{font:400 clamp(50px,5.35vw,88px)/1.07 var(--kb-serif);letter-spacing:-.065em;margin:0 0 30px;max-width:13ch;color:var(--iv-bone)}
+.iv-editorial h1{font:400 clamp(48px,4.9vw,78px)/1.08 var(--kb-serif);letter-spacing:-.065em;margin:0 0 30px;max-width:13ch;color:var(--iv-bone)}
 .iv-editorial h1 em{font-weight:400;font-style:italic;color:var(--iv-acid)}
 .iv-deck{font-size:clamp(16px,1.35vw,21px);line-height:1.77;max-width:545px;color:#c4cfda;margin:0 0 30px}
 .iv-hero-number{padding:20px 0 23px;border-top:1px solid #adb4be66;border-bottom:1px solid #adb4be66;max-width:495px}
@@ -41,7 +41,7 @@
 .iv-control-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
 .iv-control-head>div{display:flex;flex-direction:column;gap:2px}
 .iv-control-head span{font-size:9px;letter-spacing:.13em;font-weight:800;color:#abc0c9}
-.iv-control-head strong{font-size:15px;color:#f7f2ea}
+.iv-control-head label{font-size:15px;color:#f7f2ea;font-weight:750}
 .iv-control-head output{font:400 38px var(--kb-serif);color:var(--iv-acid);font-variant-numeric:tabular-nums}
 .iv-control input[type=range]{width:100%;accent-color:var(--iv-acid);margin:14px 0 6px;cursor:pointer;min-height:21px}
 .iv-control-footer{display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#a4bcc3}
@@ -64,5 +64,5 @@
 .iv-bottom strong{font-size:10px;color:var(--iv-coral);letter-spacing:.1em}
 .iv-bottom span{color:#b2bfcd;font-size:12px;line-height:1.65}
 @media(max-width:1100px){.iv-kicker,.iv-hero-content,.iv-bottom{width:calc(100% - 64px)}.iv-hero-content{grid-template-columns:1fr;gap:40px}.iv-editorial{max-width:900px}.iv-editorial h1{max-width:18ch}.iv-instrument{max-width:970px;width:100%;margin:auto}.iv-instrument-metrics strong{font-size:37px}}
-@media(max-width:640px){.iv-kicker,.iv-hero-content,.iv-bottom{width:calc(100% - 36px)}.iv-kicker{flex-wrap:wrap;padding:16px 0;font-size:9px}.iv-hero-content{padding:40px 0 35px;gap:30px}.iv-overline{font-size:9px}.iv-editorial h1{font-size:clamp(45px,12.4vw,66px)}.iv-deck{font-size:15px}.iv-hero-number>div{font-size:65px}.iv-instrument{box-shadow:8px 10px 0 #58617730}.iv-instrument-top{font-size:8px;padding:12px;flex-wrap:wrap}.iv-instrument-metrics>div{padding:12px 8px}.iv-instrument-metrics strong{font-size:23px}.iv-instrument-metrics small,.iv-instrument-metrics span{font-size:9px}.iv-chart-frame{padding:14px 10px}.iv-chart-head{font-size:8px;gap:6px}.iv-chart-legend{font-size:9px}.iv-control{padding:13px 11px}.iv-control-footer{font-size:8px}.iv-zone-head{padding:14px 11px}.iv-zones{grid-template-columns:repeat(4,minmax(0,1fr));padding:0 11px 14px}.iv-zones button{padding:9px 7px}.iv-instrument-caption{padding:12px;font-size:9px}.iv-bottom{grid-template-columns:1fr;gap:15px}.iv-bottom>div,.iv-bottom>div:first-child{padding:0 0 13px;border-right:0;border-bottom:1px solid #8b9dba55}}
+@media(max-width:640px){.iv-kicker,.iv-hero-content,.iv-bottom{width:calc(100% - 36px)}.iv-kicker{flex-wrap:wrap;padding:16px 0;font-size:9px}.iv-hero-content{padding:40px 0 35px;gap:30px}.iv-overline{font-size:9px}.iv-editorial h1{font-size:clamp(45px,11.5vw,62px)}.iv-deck{font-size:15px}.iv-hero-number>div{font-size:65px}.iv-instrument{box-shadow:8px 10px 0 #58617730}.iv-instrument-top{font-size:8px;padding:12px;flex-wrap:wrap}.iv-instrument-metrics>div{padding:12px 8px}.iv-instrument-metrics strong{font-size:23px}.iv-instrument-metrics small,.iv-instrument-metrics span{font-size:9px}.iv-chart-frame{padding:14px 10px}.iv-chart-head{font-size:8px;gap:6px}.iv-chart-legend{font-size:9px}.iv-control{padding:13px 11px}.iv-control-footer{font-size:8px}.iv-zone-head{padding:14px 11px}.iv-zones{grid-template-columns:repeat(4,minmax(0,1fr));padding:0 11px 14px}.iv-zones button{padding:9px 7px}.iv-instrument-caption{padding:12px;font-size:9px}.iv-bottom{grid-template-columns:1fr;gap:15px}.iv-bottom>div,.iv-bottom>div:first-child{padding:0 0 13px;border-right:0;border-bottom:1px solid #8b9dba55}}
 @media(prefers-reduced-motion:reduce){.iv-hero *{animation:none!important;transition:none!important}}
