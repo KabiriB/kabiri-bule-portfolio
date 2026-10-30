@@ -68,31 +68,32 @@ try {
   const selectedCount = await evaluate("document.querySelector('.kb-plot-head span:last-child').textContent");
   assert.equal(selectedCount, "80 cases");
 
-  await evaluate("Array.from(document.querySelectorAll('.kb-filter-buttons button')).find((x)=>x.textContent === 'Research').click()");
-  await waitFor(() => evaluate("document.querySelectorAll('.kb-project').length === 3"), "research collection filter");
-  assert.equal(await evaluate("document.querySelectorAll('.kb-project').length"), 3);
+  await evaluate("Array.from(document.querySelectorAll('.kb-filter-buttons button')).find((x)=>x.textContent === 'Code').click()");
+  await waitFor(() => evaluate("document.querySelectorAll('.kb-project').length === 1"), "independent code collection filter");
+  assert.equal(await evaluate("document.querySelectorAll('.kb-project').length"), 1);
 
   await evaluate("document.querySelector('.kb-studio-read button').click()");
   await waitFor(() => evaluate("Boolean(document.querySelector('#kb-studio-panel'))"), "studio rendering");
   assert.equal(await evaluate("document.querySelector('#kb-studio-panel h2')?.textContent.includes('urban pressure')"), true);
 
-  // Evidence-led atlas: question and ward selections must recalculate public ward percentages.
-  assert.equal(await evaluate("document.querySelector('#dx-hero-title')?.textContent.includes('A border')"), true);
-  assert.equal(await evaluate("document.querySelector('.dx-insight-number')?.textContent"), "81.3%", "Ward 2 cross-border rate comes from public-safe source");
-  assert.equal(await evaluate("document.querySelector('.dx-insight-base')?.textContent.includes('87 of 107')"), true);
-  assert.equal(await evaluate("document.querySelectorAll('.dx-map-region path[role=button]').length"), 6);
-  assert.equal(await evaluate("document.querySelectorAll('.dx-map-detail path[role=button]').length"), 4);
-  await evaluate("Array.from(document.querySelectorAll('.dx-question-buttons button')).find(b=>b.textContent.includes('Where did people begin')).click()");
-  await waitFor(() => evaluate("document.querySelector('.dx-insight-number')?.textContent === '84.1%'"), "birthplace indicator switch");
-  await evaluate("Array.from(document.querySelectorAll('.dx-ward-pills button')).find(b=>b.textContent.includes('WARD 3')).click()");
-  await waitFor(() => evaluate("document.querySelector('.dx-insight-number')?.textContent === '66.0%'"), "ward selection");
-  await evaluate("Array.from(document.querySelectorAll('.dx-question-buttons button')).find(b=>b.textContent.includes('Who reports staying')).click()");
-  await waitFor(() => evaluate("document.querySelector('.dx-insight-number')?.textContent === '56.0%'"), "permanence indicator switch");
-  assert.equal(await evaluate("document.querySelector('.dx-insight-base')?.textContent.includes('56 of 100')"), true);
-
+  // Independent analytical hero: real model calculations change with browser controls.
+  assert.equal(await evaluate("document.querySelector('#iv-title')?.textContent.includes('falls behind')"), true);
+  assert.equal(await evaluate("document.querySelector('#iv-capacity').value"), "0");
+  assert.equal(await evaluate("document.querySelectorAll('.iv-zones button').length"), 7);
+  const hero0 = await evaluate("document.querySelector('.iv-hero-number>div').textContent");
+  await evaluate("document.querySelector('#iv-capacity').focus()");
+  await call("Input.dispatchKeyEvent", {type:"keyDown",key:"ArrowRight",code:"ArrowRight",windowsVirtualKeyCode:39,nativeVirtualKeyCode:39});
+  await call("Input.dispatchKeyEvent", {type:"keyUp",key:"ArrowRight",code:"ArrowRight",windowsVirtualKeyCode:39,nativeVirtualKeyCode:39});
+  await waitFor(() => evaluate("document.querySelector('#iv-capacity').value === '5'"), "hero capacity interaction");
+  await waitFor(() => evaluate("document.querySelector('.iv-hero-number>div').textContent !== " + JSON.stringify("") + " && document.querySelector('.iv-hero-number p')?.textContent.includes('reference')"), "hero scenario readout");
+  assert.notEqual(hero0,await evaluate("document.querySelector('.iv-hero-number>div').textContent"),"Hero changes backlog");
+  await evaluate("Array.from(document.querySelectorAll('.iv-zones button')).find(b=>b.textContent.includes('East')).click()");
+  await waitFor(() => evaluate("document.querySelector('.iv-hero-number>span')?.textContent.includes('EAST')"), "district focus");
+  await evaluate("Array.from(document.querySelectorAll('.iv-zone-head button')).find(b=>b.textContent.includes('Reset')).click()");
+  assert.equal(await evaluate("document.querySelector('#iv-capacity').value"),"0");
+  assert.equal(await evaluate("Boolean(document.querySelector('img[src*=musina],img[src*=visual-essay]'))"),false,"Institutional assets are not rendered");
   assert.equal(await evaluate("document.querySelectorAll('.kb-entrance-grid a').length"), 3);
-  assert.equal(await evaluate("document.querySelectorAll('.kb-dashboard-art svg path').length"), 2, "Real model-based homepage preview plots two series");
-  assert.equal(await evaluate("document.querySelector('.kb-dashboard-art-foot')?.textContent.includes('Generated by the actual demonstrator')"), true, "Homepage preview identifies its synthetic provenance");
+  assert.equal(await evaluate("document.querySelectorAll('.kb-dashboard-art svg path').length"), 2);
 
   // Route 1: an independently functioning multi-district decision dashboard.
   await evaluate("window.location.hash = '#/dashboard'");
