@@ -10,7 +10,6 @@ import "./App.css";
 import "./PortfolioLab.css";
 
 const base = import.meta.env.BASE_URL;
-const projectUrl = "https://kabirib.github.io/";
 const repoUrl = "https://github.com/KabiriB/";
 
 const collection = [
