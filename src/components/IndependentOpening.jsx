@@ -8,7 +8,7 @@ const zones = [{id:"north",name:"North"},{id:"central",name:"Central"},{id:"west
 function TrendChart({rows,referenceRows}) {
  const values=[...rows,...referenceRows].flatMap(x=>[x.incoming,x.resolved]);
  const lower=Math.max(0,Math.floor((Math.min(...values)-350)/500)*500);
- const upper=Math.ceil((Math.max(...values)+350)/500)*500);
+ const upper=Math.ceil((Math.max(...values)+350)/500)*500;
  const span=Math.max(500,upper-lower);
  const line=(values,key)=>values.map((item,i)=>{
    const x=72+(i/(values.length-1))*632;
