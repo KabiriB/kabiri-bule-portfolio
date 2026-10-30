@@ -78,7 +78,7 @@ function MusinaEvidenceMap({ metric, ward, setWard }) {
         <text x="75" y="585" fill="#e0b88c" fontSize="12" fontWeight="800">N ↑</text>
       </svg>
       <div className="dx-map-bottom">
-        <div><span className="dx-swatch" /> <span>{musinaMetrics[metric].label} · higher share in lighter teal</span></div>
+        <div><span className="dx-swatch" /> <span>{musinaMetrics[metric].label} · selected ward in copper; higher share in lighter teal</span></div>
         <div>Not a population map · no household locations</div>
       </div>
     </div>
