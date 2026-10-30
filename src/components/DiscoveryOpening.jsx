@@ -127,3 +127,4 @@ export default function DiscoveryOpening() {
       <div className="dx-next"><a href="#work">How was this atlas built? <span aria-hidden="true">↓</span></a><a href="#decision-environments">What happens when we test assumptions? <span aria-hidden="true">↓</span></a></div>
     </div>
   </section>;
+}
