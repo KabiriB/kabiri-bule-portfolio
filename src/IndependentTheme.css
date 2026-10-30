@@ -1,0 +1,56 @@
+/* V4 independent edition — ink, bone, persimmon, citrine and periwinkle */
+.kb-independent-site{--kb-paper:#f3eee4;--kb-white:#faf7ef;--kb-ink:#22223a;--kb-petrol:#181c33;--kb-petrol2:#2b3654;--kb-muted:#50566b;--kb-copper:#eb7764;--kb-rule:#ccc6be;background:var(--kb-paper);color:var(--kb-ink)}
+.kb-independent-site em{color:#e56f60}
+.kb-independent-site .kb-label{color:#c45953}
+.kb-independent-site .kb-label-light{color:#dff38d}
+.kb-independent-site .kb-header{width:100%;max-width:none;margin:0;padding:0 max(28px,calc((100vw - 1400px)/2));background:#141526;color:#f7f2e7;border-bottom:1px solid #9eaac044}
+.kb-independent-site .kb-logo span{color:#dff38d}
+.kb-independent-site .kb-id-text small{color:#bac6cb}
+.kb-independent-site .kb-header nav .kb-nav-contact{border-color:#dff38d;color:#dff38d}
+.kb-independent-site .kb-header nav a:hover{color:#dff38d}
+.kb-independent-site .kb-experience-entrances{background:#f3eee4;padding-top:107px}
+.kb-independent-site .kb-entrance-header h2{max-width:930px}
+.kb-independent-site .kb-entrance-header h2 em{color:#eb7764}
+.kb-independent-site .kb-entrance-grid{grid-template-columns:1.45fr 1fr 1fr;gap:13px}
+.kb-independent-site .kb-entrance-feature{border:1px solid #29263d;background:#f9f6ed}
+.kb-independent-site .kb-entrance-id{font-size:10px;letter-spacing:.12em;color:#a6474a}
+.kb-independent-site .kb-dashboard-art{background:#151a30;color:#e5edea}
+.kb-independent-site .kb-dashboard-art-stats b{color:#dff38d}
+.kb-independent-site .kb-entrance-content{background:#f9f6ed}
+.kb-independent-site .kb-entrance-content h3{color:#1d2038}
+.kb-independent-site .kb-entrance-side{background:#e5e4ed;border-color:#c8c6d4}
+.kb-independent-site .kb-entrance-side:nth-child(3){background:#e8eacb;border-color:#cbd1b6}
+.kb-independent-site .kb-entrance-side>span:first-child{color:#ae5755}
+.kb-independent-site .kb-entrance-symbol{background:#d4d2e7}
+.kb-independent-site .kb-entrance-symbol strong{color:#222443}
+.kb-independent-site .kb-entrance-symbol strong:last-child{color:#ba5c51}
+.kb-independent-site .kb-entrance-mel-steps{background:#30344d}
+.kb-independent-site .kb-entrance-mel-steps span{background:#5b6682}
+.kb-independent-site .kb-entrance-content>span,.kb-independent-site .kb-entrance-side b{border-top:2px solid #d5675b;color:#2b293f}
+.kb-independent-site .kb-lab-section{background:#1d2138}
+.kb-independent-site .kb-lab-section em{color:#dff38d}
+.kb-independent-site .kb-workbench{background:#232c48;border-color:#8592a5}
+.kb-independent-site .kb-workbench-head,.kb-independent-site .kb-workbench-plot,.kb-independent-site .kb-workbench-controls,.kb-independent-site .kb-confusion>div{background:#242d49}
+.kb-independent-site .kb-workbench-foot{background:#13192d}
+.kb-independent-site .kb-control-top output{color:#dff38d}
+.kb-independent-site .kb-group-field button.kb-selected{background:#dff38d;color:#23253d;border-color:#dff38d}
+.kb-independent-site .kb-live i{background:#dff38d}
+.kb-independent-site .kb-collection{background:#faf7ef}
+.kb-independent-site .kb-project-type{color:#bd5955}
+.kb-independent-site .kb-project-no{color:#d46c5e}
+.kb-independent-site .kb-project:hover{background:#e8e9e7}
+.kb-independent-site .kb-studios{background:#dedcea}
+.kb-independent-site .kb-studio-top{background:#f9f7ed}
+.kb-independent-site .kb-studio-tabs button.kb-tab-active{background:#292b49;color:#dff38d}
+.kb-independent-site .kb-solid-link{background:#272840;border-color:#272840}
+.kb-independent-site .kb-writing{background:#f2eee5}
+.kb-independent-site .kb-writing-columns>a>span{color:#a85353}
+.kb-independent-site .kb-rights-note{font-size:12px;color:#667183;max-width:750px;margin-top:28px;border-top:1px solid #c4c2c7;padding-top:17px;line-height:1.8}
+.kb-independent-site .kb-about{background:#34365a;color:#f5f4ed}
+.kb-independent-site .kb-about h2{color:#f5f4ed}
+.kb-independent-site .kb-about em{color:#dff38d}
+.kb-independent-site .kb-about>div:last-child p{color:#d0d8e4}
+.kb-independent-site .kb-footer{background:#101526}
+.kb-independent-site .kb-footer em{color:#dff38d}
+.kb-independent-site .kb-footer-email span{color:#dff38d}
+@media(max-width:580px){.kb-independent-site .kb-header{padding:15px 18px}.kb-independent-site .kb-entrance-grid{grid-template-columns:1fr}.kb-independent-site .kb-entrance-feature{grid-column:auto}}

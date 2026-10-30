@@ -1,0 +1,91 @@
+name: Portfolio development check
+
+on:
+  push:
+    branches:
+      - chatgpt/portfolio-independent-v4
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install from lockfile
+        run: npm ci
+      - name: Compile React/Vite
+        run: npm run build
+      - name: Verify synthetic service accounting and aggregation
+        run: node scripts/service-model-test.mjs
+      - name: Lint authored source
+        run: npx eslint src
+      - name: Review screenshots and DOM smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run preview -- --host 127.0.0.1 --port 4173 >/tmp/portfolio-preview.log 2>&1 &
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/kabiri-bule-portfolio/ >/dev/null; then break; fi
+            sleep 1
+          done
+          BROWSER=$(command -v google-chrome || command -v chromium || true)
+          if [ -z "$BROWSER" ]; then echo "No Chromium browser found on runner"; exit 1; fi
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,1000 --screenshot=portfolio-desktop.png --dump-dom http://127.0.0.1:4173/kabiri-bule-portfolio/ > portfolio-dom.html
+          grep -q 'What happens when a system' portfolio-dom.html
+          grep -q 'Move the decision boundary' portfolio-dom.html
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=390,844 --screenshot=portfolio-mobile.png http://127.0.0.1:4173/kabiri-bule-portfolio/ >/dev/null
+          test -s portfolio-desktop.png
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,9600 --screenshot=portfolio-full-desktop.png http://127.0.0.1:4173/kabiri-bule-portfolio/ >/dev/null
+
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,7800 --screenshot=dashboard-full.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/dashboard" >/dev/null
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,960 --screenshot=dashboard-introduction.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/dashboard" >/dev/null
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,7600 --screenshot=experiment-full.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/experiment" >/dev/null
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,7600 --screenshot=monitoring-full.png "http://127.0.0.1:4173/kabiri-bule-portfolio/#/monitoring" >/dev/null
+          CHROME_BINARY="$BROWSER" node scripts/portfolio-browser-test.mjs
+          test -s dashboard-full.png
+          test -s experiment-full.png
+          test -s monitoring-full.png
+          test -s portfolio-full-desktop.png
+          test -s portfolio-mobile.png
+      - name: Store review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-review-screenshots
+          path: |
+            portfolio-desktop.png
+            portfolio-mobile.png
+            portfolio-full-desktop.png
+            portfolio-dom.html
+            dashboard-full.png
+            dashboard-introduction.png
+            dashboard-scenario-comparison.png
+            experiment-full.png
+            monitoring-full.png
+            docs/og-preview.png
+          if-no-files-found: ignore
+
+      - name: Package complete React source for local review
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-react-source-v4-independent
+          path: |
+            src/
+            docs/
+            README.md
+            scripts/
+            public/
+            index.html
+            package.json
+            package-lock.json
+            vite.config.js
+            eslint.config.js
+            .gitignore
+          if-no-files-found: error
