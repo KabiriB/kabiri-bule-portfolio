@@ -26,6 +26,8 @@ jobs:
         run: node scripts/service-model-test.mjs
       - name: Verify geography aspect and provenance
         run: node scripts/map-geometry-test.mjs
+      - name: Verify published Musina ward evidence and denominators
+        run: node scripts/musina-hero-evidence-test.mjs
       - name: Lint authored source
         run: npx eslint src
       - name: Review screenshots and DOM smoke test
