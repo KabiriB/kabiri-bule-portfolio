@@ -1,0 +1,42 @@
+.ex-impact{margin-top:18px;border:1px solid #c2cec5;background:#fbfaf3;padding:34px 38px;color:#183e43}
+.ex-impact-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;border-bottom:1px solid #ced7cf;padding-bottom:25px}
+.ex-impact-heading h2{font:400 clamp(30px,3.5vw,47px)/1.2 "Playfair Display",Georgia,serif;letter-spacing:-.045em;margin:12px 0 11px}
+.ex-impact-heading p{color:#597071;font-size:13px;line-height:1.8;max-width:710px;margin:0}
+.ex-impact-assumptions{border-left:1px solid #cfdbd2;padding:3px 0 3px 22px;min-width:190px;display:grid;gap:3px}
+.ex-impact-assumptions span{color:#966847;font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:800}
+.ex-impact-assumptions strong{font-size:15px;letter-spacing:-.02em}
+.ex-impact-assumptions small{font-size:11px;color:#638080}
+.ex-impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-top:22px}
+.ex-impact-metric{background:#eaece4;border:1px solid #cfd7cc;padding:24px 21px}
+.ex-impact-metric-header{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.ex-impact-metric h3{font:400 24px/1.24 "Playfair Display",Georgia,serif;letter-spacing:-.04em;margin:0}
+.ex-impact-metric-header>span{color:#a16642;font-size:11px;font-weight:850;white-space:nowrap}
+.ex-impact-metric>p{font-size:11px;line-height:1.75;color:#59716e;min-height:40px;margin:10px 0 24px}
+.ex-impact-bar-row{display:grid;grid-template-columns:66px minmax(0,1fr) 75px;gap:10px;align-items:center;margin:13px 0}
+.ex-impact-bar-row>span{font-size:10px;color:#476465}
+.ex-impact-bar-row>strong{font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+.ex-impact-track{height:12px;background:#cfd9d2;overflow:hidden}
+.ex-impact-track i{display:block;height:100%;transition:width .2s}
+.ex-impact-track i.reference{background:#7b9899}
+.ex-impact-track i.scenario{background:#b8784c}
+.ex-impact-brief{display:grid;grid-template-columns:1.13fr .87fr;gap:0;margin-top:20px;background:#113b43;color:#edf1e8}
+.ex-impact-reading{padding:34px 36px}
+.ex-impact-reading .ex-label{color:#dcb288}
+.ex-impact-reading h3{font:400 clamp(25px,2.6vw,36px)/1.25 "Playfair Display",Georgia,serif;letter-spacing:-.04em;margin:14px 0}
+.ex-impact-reading p{color:#c7d7d5;font-size:13px;line-height:1.85;max-width:680px;margin:0}
+.ex-impact-accounting{background:#1c4a51;padding:27px 29px;display:grid;align-content:start}
+.ex-impact-accounting>span{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#dfb78a;font-weight:800;margin-bottom:14px}
+.ex-impact-accounting>div{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #83a7a44b;padding:8px 0}
+.ex-impact-accounting small{font-size:12px;color:#c7d8d4}
+.ex-impact-accounting strong{font-size:15px;font-variant-numeric:tabular-nums}
+.ex-impact-accounting .ex-impact-total{padding-top:16px;border-bottom:0}
+.ex-impact-total strong{font-size:24px;color:#f0c295}
+.ex-impact-accounting>p{margin:15px 0 0;font-size:11px;color:#c0dfc7}
+.ex-impact-limit{font-size:11px;line-height:1.75;color:#677d7b;margin:17px 0 0}
+.ex-export{border:1px solid #a8bcb4;padding:11px 15px;background:#fffdf7;color:#15434a;font-size:12px;font-weight:750;cursor:pointer}
+.ex-export:hover{border-color:#b87a53;color:#8f5734}
+.ex-chart-key-reference{font-size:11px;color:#bdd2d0}
+.ex-chart-key-reference i{display:inline-block;width:20px;border-top:2px dashed #f3e8d6;vertical-align:middle;margin-right:6px}
+@media(max-width:1080px){.ex-impact-grid{grid-template-columns:1fr}.ex-impact-metric>p{min-height:0}.ex-impact-brief{grid-template-columns:1fr}}
+@media(max-width:640px){.ex-impact{padding:23px 16px}.ex-impact-heading{flex-direction:column;align-items:stretch;gap:17px}.ex-impact-assumptions{display:flex;gap:12px 17px;flex-wrap:wrap;padding-left:13px;min-width:0}.ex-impact-assumptions span{width:100%}.ex-impact-metric{padding:18px}.ex-impact-metric h3{font-size:22px}.ex-impact-reading,.ex-impact-accounting{padding:24px 20px}.ex-impact-bar-row{grid-template-columns:58px minmax(0,1fr) 65px;gap:7px}.ex-impact-bar-row>strong{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.ex-impact-track i{transition:none}}
