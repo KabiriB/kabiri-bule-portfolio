@@ -4,6 +4,7 @@ import GovernancePressureObservatory from "./components/GovernancePressureObserv
 import ResourceConversionLab from "./components/ResourceConversionLab";
 import RetailStrainSimulator from "./components/RetailStrainSimulator";
 import DashboardPreview from "./components/DashboardPreview";
+import DiscoveryOpening from "./components/DiscoveryOpening";
 import "./App.css";
 import "./PortfolioLab.css";
 
@@ -123,7 +124,7 @@ export default function PortfolioLab() {
     journeys: { title: "The life that crosses the map", body: "The published atlas also brings selected pseudonymised narratives into conversation with aggregate survey evidence. A journey is a sequence of decisions and relationships, not simply a line on a map.", footer: "Explore the atlas for the narrated journeys" },
     limits: { title: "What the map cannot tell us", body: "A ward boundary does not reveal why someone moved, what a service encounter felt like, or where an individual lives. The atlas distinguishes aggregate patterns from interpreted qualitative accounts.", footer: "No respondent coordinates are shown" }
   };
-  return <div className="kb-site" id="top">
+  return <div className="kb-site kb-discovery-site" id="top">
     <a className="kb-skip" href="#main">Skip to content</a>
     <header className="kb-header">
       <a href="#top" className="kb-identity" aria-label="Kabiri Bule, home"><span className="kb-logo">KB<span>.</span></span><span className="kb-id-text">Kabiri Bule<small>Independent research · data · technology</small></span></a>
@@ -131,21 +132,10 @@ export default function PortfolioLab() {
     </header>
 
     <main id="main">
-      <section className="kb-hero" aria-labelledby="kb-hero-title">
-        <div className="kb-hero-top"><Label>Issue 01 / An atlas of questions</Label><span>Research, mathematics, software and the life between them</span></div>
-        <div className="kb-hero-grid">
-          <div className="kb-hero-copy"><p className="kb-overline">From the field to the model</p><h1 id="kb-hero-title">What does the evidence <em>let us see?</em></h1><p className="kb-hero-lede">Migration, cities and institutional life meet statistics, spatial analysis, software and AI. Explore the research, test the assumptions and see how the work was built.</p><p className="kb-hero-support">An independent research and technology laboratory. Follow the published fieldwork, enter a working analytical dashboard, test a statistical argument, or inspect the code.</p><div className="kb-hero-actions"><a className="kb-solid-link" href="#work">Enter the work <span aria-hidden="true">↘</span></a><a className="kb-under-link" href="#/dashboard">Enter the dashboard ↗</a></div></div>
-          <div className="kb-hero-figure">
-            <div className="kb-figure-top"><span>Research geographies / Africa</span><span>Four located inquiries</span></div>
-            <img src={base + "assets/research-geographies.svg"} width="860" height="640" alt="Geographically located research sites at Accra, Nairobi, Johannesburg and Musina on a map with Natural Earth country boundaries. No migration routes are depicted." />
-            <div className="kb-figure-bottom"><span>Accra · Nairobi · Johannesburg · Musina</span><span>Locator map / Natural Earth</span></div>
-          </div>
-        </div>
-        <div className="kb-hero-bottom"><span><i /> Current inquiry</span><p>How can we connect patterns visible in data with the lives and mechanisms that produce them?</p><a href="#work" aria-label="Continue to selected research">↓</a></div>
-      </section>
+      <DiscoveryOpening />
 
       <section className="kb-feature kb-musina" id="work">
-        <SectionIntro number="01" eyebrow="Featured research" title={<>A border town is not simply <em>a point on a map.</em></>} description="Musina in Motion is an interactive atlas built from survey geography and selected narrated journeys. Explore what spatial patterns can show—and what they leave unanswered." />
+        <SectionIntro number="01" eyebrow="Featured research" title={<>A map shows a pattern. <em>What explains it?</em></>} description="We started with a survey distribution. But the real research question goes further: what do narrated journeys, settlement histories and the limits of our evidence add to the picture?" />
         <div className="kb-musina-grid">
           <div className="kb-lens"><div className="kb-lens-select" role="group" aria-label="Three ways to read Musina">{[["geography","01 / Place"],["journeys","02 / Journey"],["limits","03 / Limit"]].map(([key, label]) => <button type="button" className={lens === key ? "kb-on" : ""} key={key} aria-pressed={lens === key} onClick={() => setLens(key)}>{label}</button>)}</div><div className="kb-lens-copy" aria-live="polite"><Label>Reading the evidence</Label><h3>{lenses[lens].title}</h3><p>{lenses[lens].body}</p><span>{lenses[lens].footer}</span></div><div className="kb-feature-actions"><ArrowLink href={projectUrl + "musina-in-motion/"}>Enter the published atlas</ArrowLink><a href={projectUrl + "musina-in-motion/acknowledgements.html"}>Research team & acknowledgements ↗</a></div></div>
           <aside className="kb-evidence-panel" aria-label="How the Musina atlas combines evidence"><div className="kb-evidence-header"><span>Methods notebook / Musina</span><span>Reading across sources</span></div><div className="kb-evidence-steps"><div><span className="kb-evidence-index">01</span><div><h3>Locate the pattern.</h3><p>Survey observations are aggregated within a defined study geography. Ward outlines give the patterns spatial context—not individual addresses.</p></div></div><div><span className="kb-evidence-index">02</span><div><h3>Follow the sequence.</h3><p>Selected pseudonymised journeys bring timing, relationships and decisions into view. These are narrated accounts, not GPS traces.</p></div></div><div><span className="kb-evidence-index">03</span><div><h3>Read them together.</h3><p>Spatial distributions and lived experiences address different questions. Neither should be mistaken for the other.</p></div></div></div><div className="kb-evidence-foot"><strong>One place. More than one way of knowing.</strong><a href="https://github.com/KabiriB/musina-in-motion/blob/efda79657f49e94702ff72ba5d8fc7f8f26c727e/public/data/musina_wards_1_6_official_app_ready_v3_QA_PATCHED.geojson">Ward geometry provenance ↗</a></div></aside>
