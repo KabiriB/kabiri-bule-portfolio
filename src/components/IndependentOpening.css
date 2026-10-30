@@ -1,0 +1,68 @@
+/* Independent V4 visual system / electric editorial, not institutional cartography */
+.iv-hero{--iv-night:#141526;--iv-deeper:#0a1020;--iv-sky:#bdd3d0;--iv-acid:#dff38d;--iv-coral:#fc8974;--iv-bone:#f2ecdf;position:relative;background:var(--iv-night);color:var(--iv-bone);overflow:hidden}
+.iv-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 740px 680px at 76% 25%,#37416999,transparent 80%),radial-gradient(ellipse 400px 300px at 8% 90%,#58454d55,transparent),repeating-linear-gradient(90deg,transparent 0 82px,#899ac00c 83px 84px);pointer-events:none}
+.iv-hero>*{position:relative}
+.iv-kicker,.iv-hero-content,.iv-bottom{width:min(1470px,calc(100% - 96px));margin:0 auto}
+.iv-kicker{display:flex;justify-content:space-between;gap:20px;padding:24px 0;border-top:1px solid #a3adba4d;border-bottom:1px solid #a3adba4d;color:var(--iv-sky);font-size:10px;letter-spacing:.12em;font-weight:800}
+.iv-kicker span:first-child{color:var(--iv-acid)}
+.iv-kicker i{width:7px;height:7px;border-radius:50%;background:var(--iv-acid);display:inline-block;box-shadow:0 0 0 4px #dff38d24;margin-right:9px}
+.iv-hero-content{display:grid;grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);gap:clamp(20px,5vw,86px);padding:60px 0 56px;align-items:center}
+.iv-editorial{min-width:0}
+.iv-overline{display:block;font-size:11px;letter-spacing:.14em;font-weight:800;color:var(--iv-coral);margin:0 0 28px}
+.iv-editorial h1{font:400 clamp(50px,5.35vw,88px)/1.07 var(--kb-serif);letter-spacing:-.065em;margin:0 0 30px;max-width:13ch;color:var(--iv-bone)}
+.iv-editorial h1 em{font-weight:400;font-style:italic;color:var(--iv-acid)}
+.iv-deck{font-size:clamp(16px,1.35vw,21px);line-height:1.77;max-width:545px;color:#c4cfda;margin:0 0 30px}
+.iv-hero-number{padding:20px 0 23px;border-top:1px solid #adb4be66;border-bottom:1px solid #adb4be66;max-width:495px}
+.iv-hero-number>span{display:block;font-size:10px;color:#bcd1ca;font-weight:800;letter-spacing:.13em}
+.iv-hero-number>div{font:400 clamp(61px,6vw,92px)/1.15 var(--kb-serif);color:var(--iv-coral);font-variant-numeric:tabular-nums;letter-spacing:-.06em}
+.iv-hero-number>p{font-size:13px;color:#e6e0d6;line-height:1.5;margin:0}
+.iv-hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:20px 24px;margin-top:28px}
+.iv-button-primary{background:var(--iv-acid);color:#172033!important;padding:14px 19px;display:inline-flex;align-items:center;gap:27px;justify-content:space-between;text-decoration:none;font-size:12px;font-weight:850;border:1px solid var(--iv-acid)}
+.iv-button-primary:hover{background:#f0ffbd}
+.iv-secondary-link{font-size:12px;text-decoration:underline;text-underline-offset:6px;color:#e5ece6}
+.iv-instrument{background:#0c1f30;color:#f5f0e9;border:1px solid #8392a888;box-shadow:24px 24px 0 #58617730;padding:0;min-width:0}
+.iv-instrument-top{display:flex;justify-content:space-between;gap:15px;padding:17px 21px;border-bottom:1px solid #90a9aa45;letter-spacing:.1em;font-size:9px;color:#adc4d1;font-weight:750}
+.iv-running{color:var(--iv-acid)}
+.iv-running i{display:inline-block;border-radius:50%;width:6px;height:6px;background:var(--iv-acid);margin-right:6px}
+.iv-instrument-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #90a9aa45}
+.iv-instrument-metrics>div{padding:22px 19px;display:flex;flex-direction:column;gap:3px;border-right:1px solid #90a9aa45;min-width:0}
+.iv-instrument-metrics>div:last-child{border-right:0}
+.iv-instrument-metrics span{font-size:9px;color:#bcc8d2;font-weight:800;letter-spacing:.09em}
+.iv-instrument-metrics strong{font:400 clamp(24px,3vw,43px)/1.25 var(--kb-serif);letter-spacing:-.045em;color:#eef4ec;font-variant-numeric:tabular-nums}
+.iv-instrument-metrics>div:last-child strong{color:var(--iv-coral)}
+.iv-instrument-metrics small{font-size:10px;color:#9eb8c4}
+.iv-chart-frame{padding:22px 19px 17px}
+.iv-chart-head{display:flex;justify-content:space-between;gap:12px;color:#b4c9d4;letter-spacing:.1em;font-size:10px;font-weight:800}
+.iv-chart-frame svg{width:100%;display:block;height:auto;max-height:300px;margin:10px 0 0}
+.iv-chart-legend{display:flex;flex-wrap:wrap;gap:12px 19px;color:#b8cbd0;font-size:11px}
+.iv-chart-legend i{display:inline-block;width:15px;height:4px;vertical-align:middle;margin-right:6px}
+.iv-chart-legend i.iv-dashed{height:0;border-top:2px dashed #c6d2c6}
+.iv-control{padding:17px 20px 14px;border-top:1px solid #90a9aa45;border-bottom:1px solid #90a9aa45;background:#142a3a}
+.iv-control-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.iv-control-head>div{display:flex;flex-direction:column;gap:2px}
+.iv-control-head span{font-size:9px;letter-spacing:.13em;font-weight:800;color:#abc0c9}
+.iv-control-head strong{font-size:15px;color:#f7f2ea}
+.iv-control-head output{font:400 38px var(--kb-serif);color:var(--iv-acid);font-variant-numeric:tabular-nums}
+.iv-control input[type=range]{width:100%;accent-color:var(--iv-acid);margin:14px 0 6px;cursor:pointer;min-height:21px}
+.iv-control-footer{display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#a4bcc3}
+.iv-control-footer span:nth-child(2){color:#dfefbf;text-align:center}
+.iv-zone-head{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 21px 11px;font-size:9px;letter-spacing:.09em;color:#adbfca;font-weight:800}
+.iv-zone-head button{font-size:11px;border:0;background:none;color:#e1f49d;cursor:pointer}
+.iv-zones{padding:0 18px 16px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.iv-zones button{background:#23374a;border:1px solid #71869a66;color:#cbd9d9;display:flex;flex-direction:column;gap:6px;text-align:left;font-size:10px;padding:9px 6px;cursor:pointer;min-width:0}
+.iv-zones button span{font-size:13px;color:#eaf1e8;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.iv-zones button.selected{background:#e0ed95;color:#111a2a;border-color:#e0ed95}
+.iv-zones button.selected span{color:#111a2a}
+.iv-zones button:hover{border-color:#f8b390}
+.iv-instrument-caption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:15px 20px;border-top:1px solid #90a9aa45;font-size:10px;color:#b9cacf}
+.iv-instrument-caption>span:first-child{color:#d9ee9d}
+.iv-caption-pin{display:inline-block;border-radius:50%;height:6px;width:6px;background:#d9ee9d;margin-right:5px}
+.iv-bottom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #8b9dba55;padding:19px 0 29px}
+.iv-bottom>div{display:grid;gap:3px;padding:0 23px;border-right:1px solid #8b9dba55}
+.iv-bottom>div:first-child{padding-left:0}
+.iv-bottom>div:last-child{border-right:0}
+.iv-bottom strong{font-size:10px;color:var(--iv-coral);letter-spacing:.1em}
+.iv-bottom span{color:#b2bfcd;font-size:12px;line-height:1.65}
+@media(max-width:1100px){.iv-kicker,.iv-hero-content,.iv-bottom{width:calc(100% - 64px)}.iv-hero-content{grid-template-columns:1fr;gap:40px}.iv-editorial{max-width:900px}.iv-editorial h1{max-width:18ch}.iv-instrument{max-width:970px;width:100%;margin:auto}.iv-instrument-metrics strong{font-size:37px}}
+@media(max-width:640px){.iv-kicker,.iv-hero-content,.iv-bottom{width:calc(100% - 36px)}.iv-kicker{flex-wrap:wrap;padding:16px 0;font-size:9px}.iv-hero-content{padding:40px 0 35px;gap:30px}.iv-overline{font-size:9px}.iv-editorial h1{font-size:clamp(45px,12.4vw,66px)}.iv-deck{font-size:15px}.iv-hero-number>div{font-size:65px}.iv-instrument{box-shadow:8px 10px 0 #58617730}.iv-instrument-top{font-size:8px;padding:12px;flex-wrap:wrap}.iv-instrument-metrics>div{padding:12px 8px}.iv-instrument-metrics strong{font-size:23px}.iv-instrument-metrics small,.iv-instrument-metrics span{font-size:9px}.iv-chart-frame{padding:14px 10px}.iv-chart-head{font-size:8px;gap:6px}.iv-chart-legend{font-size:9px}.iv-control{padding:13px 11px}.iv-control-footer{font-size:8px}.iv-zone-head{padding:14px 11px}.iv-zones{grid-template-columns:repeat(4,minmax(0,1fr));padding:0 11px 14px}.iv-zones button{padding:9px 7px}.iv-instrument-caption{padding:12px;font-size:9px}.iv-bottom{grid-template-columns:1fr;gap:15px}.iv-bottom>div,.iv-bottom>div:first-child{padding:0 0 13px;border-right:0;border-bottom:1px solid #8b9dba55}}
+@media(prefers-reduced-motion:reduce){.iv-hero *{animation:none!important;transition:none!important}}
