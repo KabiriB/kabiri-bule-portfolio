@@ -69,3 +69,10 @@
 /* Join the global navigation visually to the immersive field atlas, including mobile edges. */
 .kb-discovery-site .kb-header{width:100%;max-width:none;padding-left:max(18px,calc((100vw - 1344px)/2));padding-right:max(18px,calc((100vw - 1344px)/2))}
 @media(min-width:1050px){.dx-visual{max-width:735px;margin-left:auto}}
+
+/* On wider screens, keep the questions within the opening viewport. */
+@media(min-width:1050px){
+  .dx-eyebrow{padding-top:15px;padding-bottom:15px}
+  .dx-lead{padding-top:22px;padding-bottom:22px}
+  .dx-visual{max-width:660px}
+}
