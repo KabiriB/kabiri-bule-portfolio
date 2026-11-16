@@ -7,6 +7,7 @@ function Header() {
       </a>
 
       <nav className="site-nav" aria-label="Main navigation">
+        <a href="/kabiri-bule-portfolio/analytics.html">Analytics cases</a>
         <a href="#studios">Studios</a>
         <a href="#writing">Writing</a>
         <a href="#research">Research</a>
