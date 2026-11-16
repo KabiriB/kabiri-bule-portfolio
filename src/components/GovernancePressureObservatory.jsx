@@ -41,6 +41,12 @@ function GovernancePressureObservatory() {
       className="site-section governance-section"
       id="governance-pressure-observatory"
     >
+      <nav className="studio-return-nav" aria-label="Return navigation">
+        <a href="#studios">← All decision studios</a>
+        <a href="/kabiri-bule-portfolio/analytics.html#work">All analytical cases ↗</a>
+        <a href="#top">↑ Top</a>
+      </nav>
+
       <div className="section-heading studio-heading">
         <div>
           <p className="eyebrow">Studio 02 · Governance Pressure Observatory</p>
