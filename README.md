@@ -13,6 +13,7 @@ The **Analytics & Decision Products** page adds a public-data commercial case us
 
 - [Explore analytics case studies](https://kabirib.github.io/kabiri-bule-portfolio/analytics.html)
 - [Bank Marketing methodology and evaluation](case-studies/bank-marketing/README.md)
+- [Reproducible Bank Marketing Python code](case-studies/bank-marketing/src/train.py)
 - [UCI source dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing)
 
 ## Source code and deployment
