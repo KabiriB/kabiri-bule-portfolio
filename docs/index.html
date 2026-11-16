@@ -10,5 +10,24 @@
   </head>
   <body>
     <div id="root"></div>
-  </body>
+      <script>
+      (function(){
+        var root=document.getElementById('root');
+        var observer=new MutationObserver(function(){
+          var nav=document.querySelector('.site-nav');
+          if(!nav) return;
+          if(!nav.querySelector('[data-analytics-link]')){
+            var a=document.createElement('a');
+            a.href='/kabiri-bule-portfolio/analytics.html';
+            a.textContent='Analytics cases';
+            a.setAttribute('data-analytics-link','true');
+            nav.insertBefore(a,nav.firstChild);
+          }
+          observer.disconnect();
+        });
+        observer.observe(root,{childList:true,subtree:true});
+        if(document.querySelector('.site-nav')) observer.takeRecords();
+      })();
+    </script>
+</body>
 </html>
