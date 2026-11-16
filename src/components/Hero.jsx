@@ -15,7 +15,10 @@ function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a className="primary-button" href="#studios">
+          <a className="primary-button" href="/kabiri-bule-portfolio/analytics.html">
+            View analytics case studies
+          </a>
+          <a className="secondary-button" href="#studios">
             Explore decision studios
           </a>
           <a className="secondary-button" href="#contact">
