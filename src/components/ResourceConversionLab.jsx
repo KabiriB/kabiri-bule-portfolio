@@ -18,6 +18,12 @@ function ResourceConversionLab() {
       className="site-section resource-lab-section"
       id="resource-conversion-lab"
     >
+      <nav className="studio-return-nav" aria-label="Return navigation">
+        <a href="#studios">← All decision studios</a>
+        <a href="/kabiri-bule-portfolio/analytics.html#work">All analytical cases ↗</a>
+        <a href="#top">↑ Top</a>
+      </nav>
+
       <div className="section-heading studio-heading">
         <div>
           <p className="eyebrow">Studio 03 · Resource Conversion Lab</p>
