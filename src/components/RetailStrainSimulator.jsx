@@ -24,6 +24,12 @@ function RetailStrainSimulator() {
       className="site-section retail-section"
       id="retail-strain-simulator"
     >
+      <nav className="studio-return-nav" aria-label="Return navigation">
+        <a href="#studios">← All decision studios</a>
+        <a href="/kabiri-bule-portfolio/analytics.html#work">All analytical cases ↗</a>
+        <a href="#top">↑ Top</a>
+      </nav>
+
       <div className="section-heading studio-heading">
         <div>
           <p className="eyebrow">Studio 04 · Retail Strain Simulator</p>
