@@ -51,6 +51,12 @@ function ExecutiveSignalRoom() {
       className="site-section executive-room-section"
       id="executive-signal-room"
     >
+      <nav className="studio-return-nav" aria-label="Return navigation">
+        <a href="#studios">← All decision studios</a>
+        <a href="/kabiri-bule-portfolio/analytics.html#work">All analytical cases ↗</a>
+        <a href="#top">↑ Top</a>
+      </nav>
+
       <div className="section-heading studio-heading">
         <div>
           <p className="eyebrow">Studio 01 · Executive Signal Room</p>
