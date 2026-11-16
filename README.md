@@ -11,10 +11,16 @@ The main site contains four interactive decision studios: Executive Signal Room,
 
 The **Analytics & Decision Products** page adds a public-data commercial case using the UCI Bank Marketing dataset. It reports held-out predictive scores, retrospective capacity ranking, limitations from temporal stress testing, and a working *hypothetical* cost/contribution scenario calculator.
 
-- [Explore analytics case studies](https://kabirib.github.io/kabiri-bule-portfolio/analytics.html)
-- [Bank Marketing methodology and evaluation](case-studies/bank-marketing/README.md)
-- [Reproducible Bank Marketing Python code](case-studies/bank-marketing/src/train.py)
+- [Explore all analytics case studies](https://kabirib.github.io/kabiri-bule-portfolio/analytics.html)
+- [01 · Bank Campaign Intelligence — real historical data, evaluated models](https://kabirib.github.io/kabiri-bule-portfolio/bank-campaign.html)
+- [02 · Governance Pressure Observatory — simulated spatial archetypes](https://kabirib.github.io/kabiri-bule-portfolio/governance-pressure.html)
+- [03 · Executive Signal Room — simulated organisational indicators](https://kabirib.github.io/kabiri-bule-portfolio/executive-signals.html)
+- [04 · Retail Performance Intelligence — simulated branch profiles](https://kabirib.github.io/kabiri-bule-portfolio/retail-operations.html)
+- [05 · Resource Conversion Lab — simulated system profiles](https://kabirib.github.io/kabiri-bule-portfolio/resource-conversion.html)
+- [Bank Marketing methods and reproducible Python modelling code](case-studies/bank-marketing/README.md)
 - [UCI source dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing)
+
+The four interactive conceptual studies are generated from the existing source definitions in `src/data/`, with their limitations displayed. They are **not observational research findings or production client deployments**. The transaction-level retail intelligence and document-grounded AI products remain in development.
 
 ## Source code and deployment
 
