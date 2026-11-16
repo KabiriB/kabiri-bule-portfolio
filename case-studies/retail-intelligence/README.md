@@ -61,7 +61,7 @@ These thresholds are transparent business rules, **not** inferred clusters, chur
 No customer-level transaction rows or customer IDs are published in this repository. The interactive site embeds only precomputed aggregates. To reproduce from the original UCI ZIP archive, save `online+retail+ii.zip` locally and run:
 
 ```bash
-python -m pip install lxml>=5.0
+python -m pip install "lxml>=5.0"
 python retail_aggregate.py --source online+retail+ii.zip --only-sheet 2009-10 --output retail_2009_10.json
 python retail_aggregate.py --source online+retail+ii.zip --only-sheet 2010-11 --output retail_2010_11.json
 python merge_periods.py --first retail_2009_10.json --second retail_2010_11.json --output retail_data.json
