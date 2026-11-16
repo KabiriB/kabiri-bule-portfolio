@@ -1823,3 +1823,27 @@ html {
     padding: 30px;
   }
 }
+
+/* Return links remain available near the top of every interactive studio. */
+.studio-return-nav {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+  margin:16px 0 22px;
+  font-size:.84rem;
+}
+.studio-return-nav a {
+  color:var(--color-bronze, #9f723d);
+  padding:9px 12px;
+  border:1px solid rgba(140,121,87,.36);
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:680;
+  background:rgba(255,255,255,.35);
+}
+.studio-return-nav a:hover,
+.studio-return-nav a:focus-visible {
+  text-decoration:underline;
+  outline-offset:2px;
+}
