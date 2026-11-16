@@ -17,10 +17,12 @@ The **Analytics & Decision Products** page adds a public-data commercial case us
 - [03 · Executive Signal Room — simulated organisational indicators](https://kabirib.github.io/kabiri-bule-portfolio/executive-signals.html)
 - [04 · Retail Performance Intelligence — simulated branch profiles](https://kabirib.github.io/kabiri-bule-portfolio/retail-operations.html)
 - [05 · Resource Conversion Lab — simulated system profiles](https://kabirib.github.io/kabiri-bule-portfolio/resource-conversion.html)
+- [06 · Retail Customer & Revenue Intelligence — observed historical transactions](https://kabirib.github.io/kabiri-bule-portfolio/retail-customer.html)
 - [Bank Marketing methods and reproducible Python modelling code](case-studies/bank-marketing/README.md)
+- [Retail intelligence data audit and reproduction instructions](case-studies/retail-intelligence/README.md)
 - [UCI source dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing)
 
-The four interactive conceptual studies are generated from the existing source definitions in `src/data/`, with their limitations displayed. They are **not observational research findings or production client deployments**. The transaction-level retail intelligence and document-grounded AI products remain in development.
+The four interactive conceptual studies are generated from the existing source definitions in `src/data/`, with their limitations displayed. They are **not observational research findings or production client deployments**. The real-data retail customer and revenue intelligence product has now been published, with its source aggregation scripts and documented reporting caveats. A separate document-grounded AI system remains in development.
 
 ## Source code and deployment
 
