@@ -56,6 +56,20 @@ The web simulator allows users to vary maximum contact capacity, hypothetical gr
 
 Review model stability, disparate treatment or impacts, privacy, permitted use of demographic and credit attributes, regulatory obligations, operational availability of predictors, retraining, drift monitoring and human accountability. A descriptive subgroup table does not constitute fairness certification.
 
-## Reproduction status
+## Reproduce the analysis
 
-The full executable Python pipeline, notebook, source archive and saved model were built and tested locally for this analytical case. The repo currently publishes the methodology and an aggregate demonstration dashboard, **not the full training pipeline**. The source is being prepared for a separate public-code release. Model claims above are drawn from the local run and should be independently rechecked before any production adaptation.
+The full [Python training pipeline](src/train.py) and [package requirements](requirements.txt) are published in this directory. The original UCI dataset and generated outputs are intentionally excluded from the repository; download the public archive yourself.
+
+From the repository root:
+
+```bash
+python -m pip install -r case-studies/bank-marketing/requirements.txt
+mkdir -p case-studies/bank-marketing/data
+# Download the UCI Bank Marketing archive and save it as:
+# case-studies/bank-marketing/data/bank+marketing.zip
+python case-studies/bank-marketing/src/train.py
+```
+
+The script reads the nested UCI archive, builds the training/validation/calibration/test partitions, trains both algorithms, evaluates random and chronological holdouts, and exports `outputs/metrics.json`, holdout scores and a local interactive-dashboard data file. It does not depend on any credentials or proprietary client records.
+
+The reported metrics reflect the prior tested run; a reviewer can rerun the public code to check them. **Do not use the saved model or derived scores for real customer targeting without a production data audit, forward validation, privacy/fairness review and an experimental test of incremental value.**
