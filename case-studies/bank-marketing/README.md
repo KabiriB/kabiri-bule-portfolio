@@ -1,7 +1,7 @@
 # Project 01 · Bank Campaign Intelligence
 
 **Type:** reproducible model-development case, public historical data (not a bank client engagement)  
-**Interface:** [Interactive decision simulator](https://kabirib.github.io/kabiri-bule-portfolio/analytics.html#simulator)  
+**Interface:** [Interactive decision simulator](https://kabirib.github.io/kabiri-bule-portfolio/bank-campaign.html#simulator)  
 **Source:** [UCI Bank Marketing](https://archive.ics.uci.edu/dataset/222/bank+marketing), Moro, Cortez & Rita (2014), *Decision Support Systems*, DOI: 10.1016/j.dss.2014.03.001.
 
 ## Business question
