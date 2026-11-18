@@ -1,42 +1,96 @@
-# Kabiri Bule · Analytics & Decision Intelligence
+# Kabiri Bule
+### Applied Analytics · Decision Intelligence · Quantitative & Spatial Research
 
-Public portfolio: **https://kabirib.github.io/kabiri-bule-portfolio/**  
-Evidence-backed analytics case studies: **https://kabirib.github.io/kabiri-bule-portfolio/analytics.html**
+**Turning complex evidence into clearer decisions.**
 
-A React/Vite portfolio combining decision-support interface prototypes with applied quantitative research, spatial analysis, and commercial analytics demonstrations.
+I develop research-grounded analytical products that help organisations understand performance, investigate risk, compare options and direct limited resources. This portfolio brings together statistical analysis, commercial intelligence, spatial research and interactive decision-support design.
 
-## How to assess the work
+**[Explore the live portfolio](https://kabirib.github.io/kabiri-bule-portfolio/)** · **[View all analytical case studies](https://kabirib.github.io/kabiri-bule-portfolio/analytics.html)** · **[Contact](mailto:kabiri.bule@gmail.com)**
 
-The main site contains four interactive decision studios: Executive Signal Room, Governance Pressure Observatory, Resource Conversion Lab, and Retail Strain Simulator. Some use clearly labelled simulated data, illustrating decision logic and user experience rather than estimates for an actual client.
+---
 
-The **Analytics & Decision Products** page adds a public-data commercial case using the UCI Bank Marketing dataset. It reports held-out predictive scores, retrospective capacity ranking, limitations from temporal stress testing, and a working *hypothetical* cost/contribution scenario calculator.
+## Selected analytical work
 
-- [Explore all analytics case studies](https://kabirib.github.io/kabiri-bule-portfolio/analytics.html)
-- [01 · Bank Campaign Intelligence — real historical data, evaluated models](https://kabirib.github.io/kabiri-bule-portfolio/bank-campaign.html)
-- [02 · Governance Pressure Observatory — simulated spatial archetypes](https://kabirib.github.io/kabiri-bule-portfolio/governance-pressure.html)
-- [03 · Executive Signal Room — simulated organisational indicators](https://kabirib.github.io/kabiri-bule-portfolio/executive-signals.html)
-- [04 · Retail Performance Intelligence — simulated branch profiles](https://kabirib.github.io/kabiri-bule-portfolio/retail-operations.html)
-- [05 · Resource Conversion Lab — simulated system profiles](https://kabirib.github.io/kabiri-bule-portfolio/resource-conversion.html)
-- [06 · Retail Customer & Revenue Intelligence — observed historical transactions](https://kabirib.github.io/kabiri-bule-portfolio/retail-customer.html)
-- [Bank Marketing methods and reproducible Python modelling code](case-studies/bank-marketing/README.md)
-- [Retail intelligence data audit and reproduction instructions](case-studies/retail-intelligence/README.md)
-- [UCI source dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing)
+Each case begins with an organisational question and shows how evidence and analytical design can inform decisions. The cases are labelled by evidence status: **two use real historical public data** and **four are interactive conceptual prototypes using illustrative data**.
 
-The four interactive conceptual studies are generated from the existing source definitions in `src/data/`, with their limitations displayed. They are **not observational research findings or production client deployments**. The real-data retail customer and revenue intelligence product has now been published, with its source aggregation scripts and documented reporting caveats. A separate document-grounded AI system remains in development.
+| Case | Decision question | Analytical approach | Live demonstration |
+|---|---|---|---|
+| **01 · Bank Campaign Intelligence** | How might limited outreach capacity be prioritised? | **Real public data.** Logistic regression, gradient boosting, out-of-sample evaluation and a hypothetical capacity scenario. | [Explore banking case](https://kabirib.github.io/kabiri-bule-portfolio/bank-campaign.html) |
+| **02 · Spatial & Governance Intelligence** | Where do different combinations of service pressure and institutional response emerge? | **Illustrative prototype.** Place-based indicator comparisons and interactive area archetypes. | [Explore spatial case](https://kabirib.github.io/kabiri-bule-portfolio/governance-pressure.html) |
+| **03 · Executive & Operational Intelligence** | What warning signals deserve attention beyond headline performance? | **Illustrative prototype.** Connected people, operations, experience and finance indicators with management scenarios. | [Explore executive case](https://kabirib.github.io/kabiri-bule-portfolio/executive-signals.html) |
+| **04 · Retail Performance Intelligence** | Can strong revenue conceal poor operational performance? | **Illustrative prototype.** Branch-level KPI comparison across service friction, stock, staffing and revenue. | [Explore retail operations](https://kabirib.github.io/kabiri-bule-portfolio/retail-operations.html) |
+| **05 · Resource & Investment Intelligence** | Why can comparable resources produce different outcomes? | **Illustrative prototype.** Comparative input, delivery and outcome profiles. | [Explore resource conversion](https://kabirib.github.io/kabiri-bule-portfolio/resource-conversion.html) |
+| **06 · Retail Customer & Revenue Intelligence** | Which customers purchase repeatedly, when does demand concentrate, and where is recorded sales value generated? | **Real public data.** Transaction cleaning, customer grouping, time-series summaries, geographic/product concentration and scenario sensitivity. | [Explore retail customer case](https://kabirib.github.io/kabiri-bule-portfolio/retail-customer.html) |
 
-## Source code and deployment
+## Two empirical cases worth examining first
 
-- `src/`: React components and data for the main portfolio.
-- `docs/`: deployed GitHub Pages build and standalone analytics page.
-- `case-studies/`: documented analytical methods, datasets, evaluations and limitations.
-- `vite.config.js`: GitHub Pages base path.
+### 01 — Bank Campaign Intelligence
 
-Main site: `npm install`, then `npm run dev`. For a production build, `npm run build -- --outDir docs`, ensuring the output is published from `main` → `/docs` in GitHub Pages. The standalone `docs/analytics.html` is hand-maintained and must be preserved when rebuilding `docs`.
+A historical Portuguese banking campaign provides **41,188 contact records** and a concrete decision problem: how should a bank investigate the allocation of limited outreach capacity?
 
-## Research and professional positioning
+The analysis compares an interpretable logistic regression baseline with a more flexible gradient-boosting model. The latter achieved **0.813 ROC-AUC** on a random holdout and captured **66.8% of observed subscriptions** in the highest-ranked 20% of that test sample. But performance declined sharply in a later-period test (**0.520 ROC-AUC**). That limitation is essential to the interpretation: historical ranking ability does not establish dependable future performance or the incremental benefit of making a call.
 
-PhD-qualified applied research and analytics specialist working across business intelligence, spatial analysis, survey-based quantitative research, governance intelligence, and decision-oriented communication. Open to international analytics roles, research partnerships and consulting engagements.
+[Interactive case](https://kabirib.github.io/kabiri-bule-portfolio/bank-campaign.html) · [Methodology and reproduction guide](case-studies/bank-marketing/README.md) · [Python model-training pipeline](case-studies/bank-marketing/src/train.py)
 
-Contact: kabiri.bule@gmail.com
+### 06 — Retail Customer & Revenue Intelligence
 
-**Methodological principle:** distinguish observed data, predictions, assumptions, simulated scenarios, causal effects, and implementation readiness. No portfolio prototype is presented as a deployed client production system.
+The UCI Online Retail II dataset provides historical transaction records across two annual worksheets. The **2010–2011 worksheet contains 541,910 invoice lines** and approximately **£10.67 million in qualifying positive-line sales value**.
+
+The analysis reconstructs transaction-level aggregates, describes purchasing activity across months and markets, and groups identifiable customers by frequency and recency of purchasing. It explicitly distinguishes invoice lines from invoices and customers. About **24.9% of the later worksheet's raw lines lack customer identifiers**, restricting customer-level analysis.
+
+**Positive-line sales value is not net revenue or profit:** cancellations and returns are not matched and deducted. The two annual worksheets overlap in December 2010 and must not be simply added together.
+
+[Interactive case](https://kabirib.github.io/kabiri-bule-portfolio/retail-customer.html) · [Data audit and reproducibility](case-studies/retail-intelligence/README.md) · [Python aggregation pipeline](case-studies/retail-intelligence/retail_aggregate.py)
+
+---
+
+## How the work is approached
+
+**Problem formulation → Data assessment → Method selection → Analysis and validation → Interactive communication → Decision implications and limits.**
+
+The aim is not simply to produce a model or dashboard. It is to make the underlying question clearer, use evidence appropriately and communicate what can be concluded without overstating certainty.
+
+- **Quantitative and commercial analytics:** descriptive statistics, customer behaviour analysis, logistic regression, gradient boosting, model validation and scenario sensitivity.
+- **Spatial and institutional intelligence:** geographic comparison, survey-informed diagnostics, multi-indicator reasoning and research translation.
+- **Decision-product engineering:** Python analytical scripts, React/Vite interfaces, standalone HTML/CSS/JavaScript explorers, and GitHub Pages deployment.
+- **Responsible interpretation:** units of analysis, missingness, leakage, temporal validity, descriptive versus causal claims, and privacy-aware publication.
+
+The four conceptual prototypes demonstrate **interface and diagnostic design**, not measured outcomes for real clients. The banking study is predictive but **not a validated causal uplift model**. The retail transaction case is descriptive, **not a churn-prediction or sales-forecasting system**. No demonstration here is presented as a live client production installation.
+
+## Repository guide
+
+| Path | What it contains |
+|---|---|
+| [`docs/`](docs/) | GitHub Pages website and standalone interactive case pages |
+| [`src/`](src/) | React components and source data definitions for the main portfolio |
+| [`case-studies/bank-marketing/`](case-studies/bank-marketing/) | Model methodology, training code and package requirements |
+| [`case-studies/retail-intelligence/`](case-studies/retail-intelligence/) | Retail data audit, aggregation scripts and reproduction instructions |
+| [`vite.config.js`](vite.config.js) | Main portfolio build configuration |
+
+### Run the React portfolio locally
+
+```bash
+npm install
+npm run dev
+```
+
+For a conventional local production build, use `npm run build`. The published GitHub Pages directory (`docs/`) also contains **hand-maintained standalone analytical pages and shared assets**. Do not overwrite it with a fresh React build without preserving those files and checking every published case link.
+
+### Reproduce the data analyses
+
+The banking and retail folders each have their own source-data and execution instructions:
+
+- [Bank model reproduction](case-studies/bank-marketing/README.md#reproduce-the-analysis)
+- [Retail aggregation reproduction](case-studies/retail-intelligence/README.md#reproduction)
+
+Raw source datasets and customer-level records are not published in this repository. The retail website uses precomputed aggregates; the public banking page reports evaluated model summaries and an illustrative decision calculator.
+
+## Current scope
+
+Six cases are published. Further development will focus on strengthening real-data analysis and evaluating a document-grounded AI evidence system before presenting it as an operational product.
+
+---
+
+**Kabiri Bule, PhD**  
+Applied research · Data analytics · Decision intelligence · Spatial and institutional systems  
+[Explore the portfolio](https://kabirib.github.io/kabiri-bule-portfolio/) · [Email](mailto:kabiri.bule@gmail.com)
