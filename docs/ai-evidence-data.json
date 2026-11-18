@@ -1,0 +1,345 @@
+{
+  "metadata": {
+    "title": "AI Evidence Intelligence • curated research corpus",
+    "asOf": "2026-11-18",
+    "scope": "Curated analyst paraphrases of selected official guidance, not the full documents, nor live ingestion.",
+    "licenseNote": "Original paraphrases linked to official sources. Verify primary texts before acting.",
+    "method": "Auditable lexical retrieval and extractive evidence presentation; no LLM, API, embeddings or autonomous reasoning."
+  },
+  "sources": [
+    {
+      "id": "nist",
+      "name": "NIST AI Risk Management Framework",
+      "short": "NIST AI RMF",
+      "year": "2023",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+      "note": "US voluntary risk-management guidance; AI RMF 1.0"
+    },
+    {
+      "id": "genai",
+      "name": "NIST Generative AI Profile",
+      "short": "NIST GenAI",
+      "year": "2024",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "note": "Companion profile for generative AI-specific risks"
+    },
+    {
+      "id": "oecd",
+      "name": "OECD AI Principles",
+      "short": "OECD",
+      "year": "2019; revised 2024",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html",
+      "note": "Intergovernmental principles and policy recommendations"
+    },
+    {
+      "id": "unesco",
+      "name": "UNESCO Recommendation on the Ethics of AI",
+      "short": "UNESCO",
+      "year": "2021",
+      "url": "https://www.unesco.org/en/legal-affairs/recommendation-ethics-artificial-intelligence",
+      "note": "Global normative recommendation and practical policy areas"
+    },
+    {
+      "id": "eu",
+      "name": "European Commission: AI Act overview",
+      "short": "European Commission",
+      "year": "Current overview",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "note": "Official overview of EU risk-based regulatory approach; check updates"
+    }
+  ],
+  "entries": [
+    {
+      "id": "nist-core",
+      "source": "nist",
+      "title": "Four core functions",
+      "topic": "governance",
+      "text": "NIST structures its AI Risk Management Framework around four functions: Govern, Map, Measure and Manage. Govern spans the lifecycle; the other functions help establish context, assess risks and determine responses.",
+      "keywords": "core four functions govern map measure manage lifecycle"
+    },
+    {
+      "id": "nist-voluntary",
+      "source": "nist",
+      "title": "Status and intended users",
+      "topic": "governance",
+      "text": "NIST AI RMF 1.0 is voluntary guidance for organisations designing, developing, deploying or using AI systems. It offers a common approach to managing risks, not an automatic compliance certification.",
+      "keywords": "voluntary nonbinding guidance organisation compliance certification"
+    },
+    {
+      "id": "nist-govern",
+      "source": "nist",
+      "title": "Governance roles and accountability",
+      "topic": "governance",
+      "text": "The Govern function concerns organisational policies, risk management culture, clear roles and responsibilities, documented practices and oversight across the AI lifecycle.",
+      "keywords": "govern leadership accountability roles responsibilities oversight policies"
+    },
+    {
+      "id": "nist-map",
+      "source": "nist",
+      "title": "Context before measurement",
+      "topic": "risk",
+      "text": "The Map function asks teams to identify the AI system's purpose, context, intended uses, affected people and plausible impacts before treating risks as measurable technical scores.",
+      "keywords": "map context purpose intended use stakeholders people impacts"
+    },
+    {
+      "id": "nist-measure",
+      "source": "nist",
+      "title": "Assess and monitor risks",
+      "topic": "evaluation",
+      "text": "The Measure function uses quantitative and qualitative approaches to analyse, assess, benchmark and monitor identified AI risks, including uncertainty and limitations of available measures.",
+      "keywords": "measure testing evaluation monitoring metrics qualitative quantitative uncertainty"
+    },
+    {
+      "id": "nist-manage",
+      "source": "nist",
+      "title": "Prioritise risk responses",
+      "topic": "operations",
+      "text": "The Manage function turns mapped and measured risks into prioritised responses, decisions on treatment and monitoring across the AI system lifecycle.",
+      "keywords": "manage prioritize prioritise mitigation response incident operations"
+    },
+    {
+      "id": "nist-trust",
+      "source": "nist",
+      "title": "Trustworthy AI characteristics",
+      "topic": "risk",
+      "text": "NIST's trustworthy-AI characteristics include validity and reliability, safety, security and resilience, accountability and transparency, explainability and interpretability, privacy, and fairness with harmful bias managed.",
+      "keywords": "trustworthy fairness reliability safety privacy bias explainability security"
+    },
+    {
+      "id": "genai-risks",
+      "source": "genai",
+      "title": "Generative-AI-specific risks",
+      "topic": "risk",
+      "text": "The Generative AI Profile examines risks such as fabricated or misleading content (confabulation), harmful or biased outputs, information-integrity concerns, privacy exposure and misuse. It supplements rather than replaces the AI RMF.",
+      "keywords": "hallucinations confabulation misinformation fabricated content bias privacy genai"
+    },
+    {
+      "id": "genai-testing",
+      "source": "genai",
+      "title": "Pre-deployment evaluation",
+      "topic": "evaluation",
+      "text": "For generative AI systems, evaluation needs to be matched to intended use and harmful failure modes; testing can examine validity, safety, resilience and the tendency to produce unsupported claims before deployment.",
+      "keywords": "predeployment test benchmark evaluate generation answers claims safety"
+    },
+    {
+      "id": "genai-monitor",
+      "source": "genai",
+      "title": "Post-deployment monitoring",
+      "topic": "operations",
+      "text": "Generative AI risk management does not end at launch: teams should monitor use and incidents, revisit evaluations and update controls as systems, contexts and threats change.",
+      "keywords": "monitor drift incidents postdeployment operations controls"
+    },
+    {
+      "id": "genai-sources",
+      "source": "genai",
+      "title": "Provenance and transparency",
+      "topic": "data",
+      "text": "Generative-AI governance benefits from documenting data provenance, model limitations and how content is produced or used, so downstream users can assess reliability and possible harms.",
+      "keywords": "training data provenance documentation limits transparency sources"
+    },
+    {
+      "id": "oecd-rights",
+      "source": "oecd",
+      "title": "Human rights and democratic values",
+      "topic": "rights",
+      "text": "The OECD Principles call for AI to respect the rule of law, human rights and democratic values, including fairness, privacy and the ability of people to challenge inappropriate outcomes.",
+      "keywords": "rights fairness democracy privacy challenge contest decisions"
+    },
+    {
+      "id": "oecd-transparency",
+      "source": "oecd",
+      "title": "Transparency and explainability",
+      "topic": "governance",
+      "text": "The OECD calls on AI actors to provide meaningful information about AI systems where appropriate, so people can understand their interactions and, when adversely affected, challenge outcomes.",
+      "keywords": "disclosure explainability transparency explanation notice users"
+    },
+    {
+      "id": "oecd-robust",
+      "source": "oecd",
+      "title": "Robustness, security and safety",
+      "topic": "risk",
+      "text": "The OECD Principles emphasise that AI systems should function appropriately under reasonably foreseeable use and misuse, with safeguards for robustness, security and safety throughout their lifecycle.",
+      "keywords": "robustness security safety misuse resilience"
+    },
+    {
+      "id": "oecd-account",
+      "source": "oecd",
+      "title": "Accountability and traceability",
+      "topic": "governance",
+      "text": "The OECD holds AI actors accountable for proper functioning of AI systems in line with their roles and context, and emphasises traceability, risk management and continuing assessment.",
+      "keywords": "accountability traceability responsible actors audit monitoring"
+    },
+    {
+      "id": "oecd-work",
+      "source": "oecd",
+      "title": "Workers and social transition",
+      "topic": "rights",
+      "text": "OECD recommendations encourage governments to prepare people for transformations in work and to promote a fair transition as AI changes tasks and labour markets.",
+      "keywords": "jobs labour workers employment training workforce transition"
+    },
+    {
+      "id": "unesco-impact",
+      "source": "unesco",
+      "title": "Ethical impact assessments",
+      "topic": "evaluation",
+      "text": "UNESCO recommends ethical impact assessments that examine potential effects of AI on human rights, communities, society and the environment, with attention to different groups and contexts.",
+      "keywords": "ethical impact assessment rights assessment affected groups"
+    },
+    {
+      "id": "unesco-data",
+      "source": "unesco",
+      "title": "Data governance and privacy",
+      "topic": "data",
+      "text": "UNESCO's policy areas address data policy and governance, privacy, data quality, access and safeguards against harmful uses of personal information.",
+      "keywords": "data governance privacy consent personal information"
+    },
+    {
+      "id": "unesco-gender",
+      "source": "unesco",
+      "title": "Gender, inclusion and inequality",
+      "topic": "rights",
+      "text": "UNESCO calls for attention to gender equality, non-discrimination, social inclusion and groups at greater risk of being excluded or harmed by AI systems.",
+      "keywords": "gender inclusion marginalized equality discrimination bias"
+    },
+    {
+      "id": "unesco-environment",
+      "source": "unesco",
+      "title": "Environmental implications",
+      "topic": "risk",
+      "text": "UNESCO treats environmental and ecosystem impacts as a dedicated AI policy area, asking policymakers to consider both potential benefits and ecological costs.",
+      "keywords": "environment ecology carbon energy ecosystems"
+    },
+    {
+      "id": "unesco-oversight",
+      "source": "unesco",
+      "title": "Human oversight and accountability",
+      "topic": "governance",
+      "text": "UNESCO emphasises human oversight, transparency, responsibility and mechanisms for monitoring the ethical effects of AI systems; automation does not remove human responsibility.",
+      "keywords": "human oversight accountability governance responsibility audit"
+    },
+    {
+      "id": "unesco-capacity",
+      "source": "unesco",
+      "title": "Research and capacity-building",
+      "topic": "operations",
+      "text": "UNESCO highlights education, research, international cooperation and capacity development, including attention to countries facing unequal access to resources and expertise.",
+      "keywords": "training research development capacity global south inequality"
+    },
+    {
+      "id": "eu-risk",
+      "source": "eu",
+      "title": "Risk-based legal approach",
+      "topic": "risk",
+      "text": "The European Union AI Act uses a risk-based structure: some AI uses are prohibited, high-risk uses face stronger requirements, and certain other AI uses face transparency obligations. It does not treat all systems alike.",
+      "keywords": "risk based categories prohibited high risk transparency low risk"
+    },
+    {
+      "id": "eu-high",
+      "source": "eu",
+      "title": "High-risk application areas",
+      "topic": "operations",
+      "text": "The European Commission identifies high-risk AI use cases in sensitive fields such as employment, education, essential services, migration and border control, as well as certain regulated products. Classification depends on the actual intended use.",
+      "keywords": "employment hiring migration border education essential services high risk"
+    },
+    {
+      "id": "eu-controls",
+      "source": "eu",
+      "title": "Controls for high-risk AI",
+      "topic": "governance",
+      "text": "The AI Act sets obligations for relevant high-risk systems covering risk management, data governance, technical documentation, logging, transparency for deployers, human oversight, accuracy, robustness and cybersecurity.",
+      "keywords": "high risk documentation logging oversight accuracy cybersecurity governance"
+    },
+    {
+      "id": "eu-disclosure",
+      "source": "eu",
+      "title": "Transparency obligations",
+      "topic": "rights",
+      "text": "The EU framework includes transparency duties for certain AI interactions and synthetic content. Which duty applies depends on the system and use case; this overview is not a substitute for legal advice.",
+      "keywords": "chatbot disclosure deepfake synthetic content transparency"
+    },
+    {
+      "id": "eu-timing",
+      "source": "eu",
+      "title": "Regulatory timelines change",
+      "topic": "governance",
+      "text": "EU AI Act implementation dates and transitional arrangements can be amended. Before making a compliance decision, review the current regulation and European Commission guidance rather than relying on a static portfolio example.",
+      "keywords": "dates deadlines timeline implementation compliance updates"
+    }
+  ],
+  "evaluation": {
+    "positives": [
+      {
+        "q": "What are NIST's four AI risk functions?",
+        "gold": "nist-core"
+      },
+      {
+        "q": "How do I assign governance responsibilities for an AI model?",
+        "gold": "nist-govern"
+      },
+      {
+        "q": "How should we understand the context and affected people?",
+        "gold": "nist-map"
+      },
+      {
+        "q": "How can risks be evaluated and monitored?",
+        "gold": "nist-measure"
+      },
+      {
+        "q": "What does NIST recommend about responding to risks?",
+        "gold": "nist-manage"
+      },
+      {
+        "q": "What are generative AI hallucinations or confabulations?",
+        "gold": "genai-risks"
+      },
+      {
+        "q": "How should we test a generative AI product before launch?",
+        "gold": "genai-testing"
+      },
+      {
+        "q": "What does the OECD say about transparency and explainability?",
+        "gold": "oecd-transparency"
+      },
+      {
+        "q": "Who is accountable for AI decisions according to OECD?",
+        "gold": "oecd-account"
+      },
+      {
+        "q": "What does UNESCO say about ethical impact assessments?",
+        "gold": "unesco-impact"
+      },
+      {
+        "q": "How should an organisation think about AI and gender equality?",
+        "gold": "unesco-gender"
+      },
+      {
+        "q": "Is all AI high risk under the EU AI Act?",
+        "gold": "eu-risk"
+      },
+      {
+        "q": "Are AI hiring and migration tools considered sensitive in EU law?",
+        "gold": "eu-high"
+      },
+      {
+        "q": "What governance controls are expected for high risk EU AI?",
+        "gold": "eu-controls"
+      },
+      {
+        "q": "How can AI affect the environment and ecosystems?",
+        "gold": "unesco-environment"
+      },
+      {
+        "q": "What does UNESCO say about data governance and privacy?",
+        "gold": "unesco-data"
+      }
+    ],
+    "negatives": [
+      "What is today's Apple share price?",
+      "Who won the FIFA World Cup final in 2026?",
+      "What is Johannesburg's population in 2026?",
+      "How many people attended last night's meeting?",
+      "What was our company revenue in October?",
+      "Which applicant should I hire tomorrow?"
+    ]
+  }
+}
