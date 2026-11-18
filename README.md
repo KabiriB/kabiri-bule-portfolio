@@ -11,7 +11,7 @@ I develop research-grounded analytical products that help organisations understa
 
 ## Selected analytical work
 
-Each case begins with an organisational question and shows how evidence and analytical design can inform decisions. The cases are labelled by evidence status: **two use real historical public data** and **four are interactive conceptual prototypes using illustrative data**.
+Each case begins with an organisational question and shows how evidence and analytical design can inform decisions. The cases are labelled by evidence status: **two use real historical public data**, **four are illustrative decision prototypes**, and **one is a working evidence-retrieval prototype** (without an LLM).
 
 | Case | Decision question | Analytical approach | Live demonstration |
 |---|---|---|---|
@@ -21,6 +21,7 @@ Each case begins with an organisational question and shows how evidence and anal
 | **04 · Retail Performance Intelligence** | Can strong revenue conceal poor operational performance? | **Illustrative prototype.** Branch-level KPI comparison across service friction, stock, staffing and revenue. | [Explore retail operations](https://kabirib.github.io/kabiri-bule-portfolio/retail-operations.html) |
 | **05 · Resource & Investment Intelligence** | Why can comparable resources produce different outcomes? | **Illustrative prototype.** Comparative input, delivery and outcome profiles. | [Explore resource conversion](https://kabirib.github.io/kabiri-bule-portfolio/resource-conversion.html) |
 | **06 · Retail Customer & Revenue Intelligence** | Which customers purchase repeatedly, when does demand concentrate, and where is recorded sales value generated? | **Real public data.** Transaction cleaning, customer grouping, time-series summaries, geographic/product concentration and scenario sensitivity. | [Explore retail customer case](https://kabirib.github.io/kabiri-bule-portfolio/retail-customer.html) |
+| **07 · AI Evidence Intelligence** | Can a research team retrieve source-backed evidence while declining unsupported requests? | **Working retrieval prototype.** Browser-side lexical ranking over 27 curated source-linked passages, citations, explicit abstention and a 22-query evaluation console; no language model. | [Explore evidence intelligence](https://kabirib.github.io/kabiri-bule-portfolio/ai-evidence.html) |
 
 ## Two empirical cases worth examining first
 
@@ -55,7 +56,7 @@ The aim is not simply to produce a model or dashboard. It is to make the underly
 - **Decision-product engineering:** Python analytical scripts, React/Vite interfaces, standalone HTML/CSS/JavaScript explorers, and GitHub Pages deployment.
 - **Responsible interpretation:** units of analysis, missingness, leakage, temporal validity, descriptive versus causal claims, and privacy-aware publication.
 
-The four conceptual prototypes demonstrate **interface and diagnostic design**, not measured outcomes for real clients. The banking study is predictive but **not a validated causal uplift model**. The retail transaction case is descriptive, **not a churn-prediction or sales-forecasting system**. No demonstration here is presented as a live client production installation.
+The four conceptual prototypes demonstrate **interface and diagnostic design**, not measured outcomes for real clients. Case 07 demonstrates browser-side evidence retrieval and testing, **not a deployed LLM or complete document-grounded RAG system**. The banking study is predictive but **not a validated causal uplift model**. The retail transaction case is descriptive, **not a churn-prediction or sales-forecasting system**. No demonstration here is presented as a live client production installation.
 
 ## Repository guide
 
@@ -65,6 +66,7 @@ The four conceptual prototypes demonstrate **interface and diagnostic design**, 
 | [`src/`](src/) | React components and source data definitions for the main portfolio |
 | [`case-studies/bank-marketing/`](case-studies/bank-marketing/) | Model methodology, training code and package requirements |
 | [`case-studies/retail-intelligence/`](case-studies/retail-intelligence/) | Retail data audit, aggregation scripts and reproduction instructions |
+| [`case-studies/ai-evidence/`](case-studies/ai-evidence/) | AI evidence retrieval case, evaluation protocol, scope limitations and primary sources |
 | [`vite.config.js`](vite.config.js) | Main portfolio build configuration |
 
 ### Run the React portfolio locally
@@ -87,7 +89,7 @@ Raw source datasets and customer-level records are not published in this reposit
 
 ## Current scope
 
-Six cases are published. Further development will focus on strengthening real-data analysis and evaluating a document-grounded AI evidence system before presenting it as an operational product.
+Seven case pages are published: two real-data studies, four conceptual simulations and one working AI evidence-retrieval demonstration. Future work includes full-text document ingestion, semantic retrieval, grounded language-model generation, independent evaluation and operational governance; these have **not** yet been deployed.
 
 ---
 
